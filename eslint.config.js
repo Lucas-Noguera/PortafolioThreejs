@@ -28,6 +28,16 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'quotes': [
+        'error',
+        'single',
+        { avoidEscape: true, allowTemplateLiterals: false },
+      ],
+      'semi': ['error', 'never'],
+      'no-extra-semi': 'error',
+      'no-trailing-spaces': 'error',
+      'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
+      'comma-dangle': ['error', 'always-multiline'],
     },
   },
 ]
