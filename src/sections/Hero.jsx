@@ -11,6 +11,7 @@ import { ReactLogo } from '../../components/ReactLogo'
 import { Cube } from '../../components/Cube'
 import { Rings } from '../../components/Rings'
 import { HeroCamera } from '../../components/HeroCamera'
+import { Button } from '../../components/Button'
 
 export const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 440 })
@@ -20,7 +21,7 @@ export const Hero = () => {
     const sizes = calculateSizes(isSmall, isMobile, isTablet)
 
     return (
-        <section className="min-h-screen w-full flex flex-col relative">
+        <section className="relative h-screen w-full flex flex-col overflow-hidden">
             <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
                 <p className="
                 sm:text-3xl text-2xl
@@ -34,7 +35,7 @@ export const Hero = () => {
                 text-gray_gradient">Building Products & Brands</p>
             </div>
 
-             <div className="w-full h-full absolute inset-0">
+             <div className="w-full h-full absolute inset-0 z-0">
                {/*<Leva />*/}
                 <Canvas className='w-full h-full'>
                     <Suspense
@@ -73,6 +74,21 @@ export const Hero = () => {
                     </Suspense>
                 </Canvas>
              </div>
+
+             <div className='absolute bottom-7 left-0 right-0 w-full z-10 c-space  '>
+
+                <a href="#contact" className='w-fit'>
+                    <Button
+                    name="Let's work together"
+                    isBeam
+                    containerClass='btn sm:w-fit w-full sm:min-w-96'
+                    btnping='btn-ping'
+                    btnpingdot='btn-ping_dot'
+                    />
+
+                </a>
+             </div>
+
         </section>
     )
 }
