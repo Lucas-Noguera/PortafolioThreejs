@@ -16,7 +16,7 @@ import { Button } from '../../components/Button'
 export const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 440 })
     const isMobile = useMediaQuery({ maxWidth: 768 })
-    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 })
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1280, maxHeight: 801 })
 
     const sizes = calculateSizes(isSmall, isMobile, isTablet)
 
