@@ -1,3 +1,5 @@
+import { layoutConfigs } from '../config'
+
 export const navLinks = [
   {
     id: 1,
@@ -246,14 +248,82 @@ export const myProjects = [
   },
 ]
 
-export const calculateSizes = (isSmall, isMobile, isTablet) => {
+export const calculateSizes = (isSmall, isMobile, isTablet, isIpadVertical, isWideLow) => {
+  const isSpecialTablet = isIpadVertical
+  const isNestLike = isWideLow
+
   return {
-    deskScale: isSmall ? 0.04 : isMobile ? 0.06 : isTablet ? 0.04 : 0.05,
-    deskPosition: isMobile ? [0.4, -3.5, 0] : [0.25, -4, 0],
-    cubePosition: isSmall ? [2, -6.5, 0] : isMobile ? [5, -5, 0] : isTablet ? [6, -7, 0] : [4, -6.7, 0],
-    reactLogoPosition: isSmall ? [2, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 0, 0] : [4, 4, 0],
-    ringPosition: isSmall ? [-4, 7, 0] : isMobile ? [-11, 6, 0] : isTablet ? [-13, 0, 0] : [-8, 8, 0],
-    targetPosition: isSmall ? [-3, -11, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-9, -12, -10] : [-6, -13, -10],
+    deskScale: isSmall
+      ? 0.04
+      : isMobile
+      ? 0.06
+      : isNestLike
+      ? 0.035
+      : isSpecialTablet
+      ? 0.048
+      : isTablet
+      ? 0.042
+      : 0.05,
+
+    deskPosition: isSmall
+      ? [0.3, -3.6, 0]
+      : isMobile
+      ? [0.4, -3.5, 0]
+      : isNestLike
+      ? [0.2, -3.7, 0]
+      : isSpecialTablet
+      ? [0.2, -4.3, 0]
+      : isTablet
+      ? [0.25, -4, 0]
+      : [0.25, -4, 0],
+
+    cubePosition: isSmall
+      ? [2, -6.5, 0]
+      : isMobile
+      ? [5, -5, 0]
+      : isNestLike
+      ? [8, -6.6, 0]
+      : isSpecialTablet
+      ? [5, -7, 0]
+      : isTablet
+      ? [4, -7, 0]
+      : [9, -5.5, 0],
+
+    reactLogoPosition: isSmall
+      ? [2, 3, 0]
+      : isMobile
+      ? [5, 4, 0]
+      : isNestLike
+      ? [9, 5, 0]
+      : isSpecialTablet
+      ? [5, 2, 0]
+      : isTablet
+      ? [5, 0, 0]
+      : [12, 3, 0],
+
+    ringPosition: isSmall
+      ? [-4, 6, 0]
+      : isMobile
+      ? [-11, 6, 0]
+      : isNestLike
+      ? [-19, 12, 0]
+      : isSpecialTablet
+      ? [-10, 5, 0]
+      : isTablet
+      ? [-10, 0, 0]
+      : [-24, 10, 0],
+
+    targetPosition: isSmall
+      ? [-4, -11, -10]
+      : isMobile
+      ? [-9, -10, -10]
+      : isNestLike
+      ? [-12, -12, -10]
+      : isSpecialTablet
+      ? [-7, -13, -10]
+      : isTablet
+      ? [-7, -12, -10]
+      : [-13, -13, -10],
   }
 }
 
@@ -286,3 +356,20 @@ export const workExperiences = [
     animation: 'salute',
   },
 ]
+
+export const getLayoutConfig = ({
+  isSmall,
+  isMobile,
+  isTablet,
+  isIpadVertical,
+  isWideLow,
+  isDesktopLow,
+}) => {
+  if (isSmall) return layoutConfigs.small
+  if (isMobile) return layoutConfigs.mobile
+  if (isWideLow) return layoutConfigs.nestLike
+  if (isIpadVertical) return layoutConfigs.specialTablet
+  if (isTablet) return layoutConfigs.tablet
+  if (isDesktopLow) return layoutConfigs.desktopLow
+  return layoutConfigs.desktop
+}

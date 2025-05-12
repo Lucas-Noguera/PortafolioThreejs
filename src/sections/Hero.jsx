@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 import { CanvasLoader } from '../../components/CanvasLoader'
 import { Leva } from 'leva'
 import { useMediaQuery } from 'react-responsive'
-import { calculateSizes } from '../constants'
+import { getLayoutConfig } from '../constants'
 import { Target } from '../../components/Target'
 import { ReactLogo } from '../../components/ReactLogo'
 import { Cube } from '../../components/Cube'
@@ -15,10 +15,37 @@ import { Button } from '../../components/Button'
 
 export const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 440 })
-    const isMobile = useMediaQuery({ maxWidth: 768 })
-    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1280, maxHeight: 801 })
+    const isMobile = useMediaQuery({
+        minWidth: 441,
+        maxWidth: 767  })
+    const isTablet = useMediaQuery({
+        minWidth: 768,
+        maxWidth: 1279})
+    const isIpadVertical = useMediaQuery({
+        minWidth: 768,
+        maxWidth: 850,
+        minHeight: 1000,
+        maxHeight: 1400,
+      })
+      const isWideLow = useMediaQuery({
+        minWidth: 960,
+        maxWidth: 1280,
+        maxHeight: 800,
+      })
 
-    const sizes = calculateSizes(isSmall, isMobile, isTablet)
+      const isDesktopWideShort = useMediaQuery({
+      minWidth: 1440,
+      maxHeight: 1300,
+      })
+
+      const layout = getLayoutConfig({
+        isSmall,
+        isMobile,
+        isTablet,
+        isIpadVertical,
+        isWideLow,
+        isDesktopLow: isDesktopWideShort,
+      })
 
     return (
         <section className="relative h-screen w-full flex flex-col overflow-hidden">
@@ -48,22 +75,22 @@ export const Hero = () => {
                     <HeroCamera isMobile={isMobile}>
 
                     <HackerRoom
-                    position={sizes.deskPosition}
+                    position={layout.deskPosition}
                     rotation={[0, -Math.PI, 0]}
-                    scale={sizes.deskScale}
+                    scale={layout.deskScale}
                     />
 
                     </HeroCamera>
 
                     <group>
 
-                        <Target position={sizes.targetPosition} />
+                        <Target position={layout.targetPosition} />
 
-                        <ReactLogo position={sizes.reactLogoPosition} />
+                        <ReactLogo position={layout.reactLogoPosition} />
 
-                        <Cube position={sizes.cubePosition} />
+                        <Cube position={layout.cubePosition} />
 
-                        <Rings position={sizes.ringPosition} />
+                        <Rings position={layout.ringPosition} />
 
                     </group>
 
