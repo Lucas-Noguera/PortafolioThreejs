@@ -9,7 +9,11 @@ export const HeroCamera = ({ isMobile, children }) => {
     easing.damp3(state.camera.position, [0, 0, 20], 0.25, delta)
 
     if (!isMobile) {
-      easing.dampE(group.current.rotation, [-state.pointer.y / 3, state.pointer.x / 5, 0], 0.25, delta)
+      // Calcula el ángulo objetivo
+      const targetX = Math.max(-0.5, Math.min(0.5, -state.pointer.y / 3)) // Limita entre -0.5 y 0.5 radianes (~28 grados)
+      const targetY = state.pointer.x / 5
+
+      easing.dampE(group.current.rotation, [targetX, targetY, 0], 0.25, delta)
     }
   })
 

@@ -5,8 +5,12 @@ export default {
     './src/**/*.{js,jsx,ts,tsx}',
     './src/components/**/*.{js,jsx,ts,tsx}',
     './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/sections/**/*.{js,jsx,ts,tsx}',
+    './src/hooks/**/*.{js,jsx,ts,tsx}',
+    './src/constants/**/*.{js,jsx,ts,tsx}',
+    './src/App.jsx',
+    './components/**/*.{js,jsx,ts,tsx}',
   ],
-
   theme: {
     extend: {
       fontFamily: {
@@ -31,6 +35,11 @@ export default {
       },
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
+      },
+      // <-- AÑADE ESTA SECCIÓN:
+      minHeight: {
+        '14': '3.5rem',   // ahora dispones de la clase min-h-14
+        '12': '3rem',     // por ejemplo min-h-12
       },
     },
   },
