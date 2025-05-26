@@ -1,6 +1,5 @@
-// Contact.jsx
-import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { useCallback, useState } from 'react'
 
 import useAlert from '../hooks/useAlert.js'
 import { Alert } from '../../components/Alert.jsx'
@@ -10,57 +9,79 @@ export const Contact = () => {
   const { alert, showAlert, hideAlert } = useAlert()
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e, formRef) => {
-    e.preventDefault()
-    setLoading(true)
+  const [form, setForm] = useState({ name: '', email: '', message: '' })
 
-    // Leemos directamente del form DOM:
-    const formData = new FormData(formRef.current)
-    const data = Object.fromEntries(formData.entries())
+  const handleChange = useCallback(({ target: { name, value } }) => {
+    setForm(f => ({ ...f, [name]: value }))
+  }, [])
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        data,
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-      )
-      .then(() => {
-        setLoading(false)
-        showAlert({ text: 'Thank you for your message 😃', type: 'success' })
-        setTimeout(() => {
-          hideAlert()
-          // Resetea el form HTML (sin re-render React):
-          formRef.current.reset()
-        }, 3000)
+const handleSubmit = (e) => {
+  e.preventDefault()
+  setLoading(true)
+
+  emailjs
+    .send(
+      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: form.name,
+        to_name: 'Lucas',
+        from_email: form.email,
+        to_email: 'lucasnoguera260105@gmail.com',
+        message: form.message,
+      },
+      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+    )
+    .then(() => {
+      setLoading(false)
+      showAlert({
+        show: true,
+        text: 'Thank you for your message 😃',
+        type: 'success',
       })
-      .catch((error) => {
-        setLoading(false)
-        console.error(error)
-        showAlert({ text: "I didn't receive your message 😢", type: 'danger' })
+
+      setTimeout(() => {
+        hideAlert() // 👈 este ya no necesita `false`
+        setForm({
+          name: '',
+          email: '',
+          message: '',
+        })
+      }, 3000) // 👈 el array sobraba
+    })
+    .catch((error) => {
+      setLoading(false)
+      console.error(error)
+      showAlert({
+        show: true,
+        text: "I didn't receive your message 😢",
+        type: 'danger',
       })
-  }
+    })
+}
 
   return (
     <section className="c-space my-20" id="contact">
       {alert.show && <Alert {...alert} />}
+
       <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{ backgroundImage: "url('/assets/terminal.png')" }}
-          aria-hidden="true"
-        />
++       <div
+         className="absolute inset-0 bg-cover bg-no-repeat"
+         style={{ backgroundImage: "url('/assets/terminal.png')" }}
+         aria-hidden="true"
+       />
         <div className="contact-container">
           <h3 className="head-text">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing
-            platform, or bring a unique project to life, I’m here to help.
+            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
+            life, I’m here to help.
           </p>
-
           <ContactForm
-            handleSubmit={handleSubmit}
-            loading={loading}
-          />
+          form={form}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          loading={loading}
+           />
         </div>
       </div>
     </section>
