@@ -56,7 +56,7 @@ export const Hero = () => {
       {/* 👇 ESTE DIV TIENE ref Y MONTA CANVAS SOLO SI inView */}
       <div ref={ref} className="w-full h-full absolute inset-0 z-0">
         {inView && ( // 👈 SOLO se monta si está en pantalla
-          <Canvas className="w-full h-full">
+          <Canvas className="w-full h-full" frameloop='demand'>
             <Suspense fallback={<CanvasLoader />}>
               <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
