@@ -60,7 +60,7 @@ export const Hero = () => {
             <Suspense fallback={<CanvasLoader />}>
               <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
-              <HeroCamera isMobile={isMobile} isTablet={isTablet}>
+              <HeroCamera isMobile={isMobile} isTablet={isTablet} isSmall={isSmall}>
                 <HackerRoom
                   position={layout.deskPosition}
                   rotation={[0, -Math.PI, 0]}
