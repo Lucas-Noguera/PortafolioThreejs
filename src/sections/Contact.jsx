@@ -41,13 +41,13 @@ const handleSubmit = (e) => {
       })
 
       setTimeout(() => {
-        hideAlert() // 👈 este ya no necesita `false`
+        hideAlert()
         setForm({
           name: '',
           email: '',
           message: '',
         })
-      }, 3000) // 👈 el array sobraba
+      }, 3000)
     })
     .catch((error) => {
       setLoading(false)

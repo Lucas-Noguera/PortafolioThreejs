@@ -5,7 +5,7 @@ import { easing } from 'maath'
 export const HeroCamera = ({ isMobile, isTablet, isSmall, children }) => {
   const group = useRef()
 
-  const shouldRotate = !(isMobile || isTablet || isSmall) // 👈 SOLO desktop
+  const shouldRotate = !(isMobile || isTablet || isSmall)
 
   useFrame((state, delta) => {
     easing.damp3(state.camera.position, [0, 0, 20], 0.25, delta)

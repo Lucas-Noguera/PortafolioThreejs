@@ -1,10 +1,10 @@
-import { useInView } from 'react-intersection-observer' // 👈 NUEVO
+import { useInView } from 'react-intersection-observer'
 import { PerspectiveCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { HackerRoom } from '../../components/HackerRoom'
 import { Suspense } from 'react'
 import { CanvasLoader } from '../../components/CanvasLoader'
-// import { Leva } from 'leva'  // Puedes dejarlo comentado
+// import { Leva } from 'leva'
 import { useMediaQuery } from 'react-responsive'
 import { getLayoutConfig } from '../constants'
 import { HeroCamera } from '../../components/HeroCamera'
@@ -39,7 +39,6 @@ export const Hero = () => {
     isDesktopLow: isDesktopWideShort,
   })
 
-  // 👇 NUEVO: detectar si el Hero está en pantalla
   const { ref, inView } = useInView({
     threshold: 0.1,
   })
@@ -53,10 +52,9 @@ export const Hero = () => {
         <p className="hero_tag text-gray_gradient">Building Products & Brands</p>
       </div>
 
-      {/* 👇 ESTE DIV TIENE ref Y MONTA CANVAS SOLO SI inView */}
       <div ref={ref} className="w-full h-full absolute inset-0 z-0">
-        {inView && ( // 👈 SOLO se monta si está en pantalla
-          <Canvas className="w-full h-full" frameloop='demand'>
+        {inView && (
+          <Canvas className="w-full h-full" frameloop={ isSmall ? 'demand' : isTablet ? 'demand' : 'always' }>
             <Suspense fallback={<CanvasLoader />}>
               <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
