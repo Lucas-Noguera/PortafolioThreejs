@@ -7,10 +7,6 @@ import { CanvasLoader } from '../../components/CanvasLoader'
 // import { Leva } from 'leva'  // Puedes dejarlo comentado
 import { useMediaQuery } from 'react-responsive'
 import { getLayoutConfig } from '../constants'
-import { Target } from '../../components/Target'
-import { ReactLogo } from '../../components/ReactLogo'
-import { Cube } from '../../components/Cube'
-import { Rings } from '../../components/Rings'
 import { HeroCamera } from '../../components/HeroCamera'
 import { Button } from '../../components/Button'
 
@@ -71,13 +67,6 @@ export const Hero = () => {
                   scale={layout.deskScale}
                 />
               </HeroCamera>
-
-              <group>
-                <Target position={layout.targetPosition} />
-                <ReactLogo position={layout.reactLogoPosition} />
-                <Cube position={layout.cubePosition} />
-                <Rings position={layout.ringPosition} />
-              </group>
 
               <ambientLight intensity={2} />
               <directionalLight position={[10, 10, 10]} intensity={0.5} />
