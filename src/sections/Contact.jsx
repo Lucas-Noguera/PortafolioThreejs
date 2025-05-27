@@ -66,13 +66,14 @@ const handleSubmit = (e) => {
 
         <div className="relative w-full min-h-screen px-4 py-12 flex justify-center"
         style={{ backgroundImage: "url('/assets/terminal.png')",
-          backgroundSize: 'cover',
+          backgroundSize: '100% 100%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          borderRadius: '10px',
         }}>
 
             <div className="contact-container">
-            <h3 className="head-text text-white">Let's talk</h3>
+            <h3 className="head-text text-white mt-10">Let's talk</h3>
             <p className="text-lg text-white mt-3">
               Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
               life, I’m here to help.
