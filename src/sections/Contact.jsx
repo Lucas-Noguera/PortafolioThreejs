@@ -64,26 +64,27 @@ const handleSubmit = (e) => {
     <section className="c-space my-20" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-+       <div
-         className="absolute inset-0 bg-cover bg-no-repeat"
-         style={{ backgroundImage: "url('/assets/terminal.png')" }}
-         aria-hidden="true"
-       />
-        <div className="contact-container">
-          <h3 className="head-text">Let's talk</h3>
-          <p className="text-lg text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
-            life, I’m here to help.
-          </p>
-          <ContactForm
-          form={form}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          loading={loading}
-           />
+        <div className="relative w-full min-h-screen px-4 py-12 flex justify-center">
+          <div
+            className="absolute inset-0 h-full w-full bg-cover bg-no-repeat bg-center z-0"
+            style={{ backgroundImage: "url('/assets/terminal.png')" }}
+            aria-hidden="true"
+          />
+            <div className="contact-container relative z-10 w-full max-w-2xl bg-black/80 backdrop-blur-md p-6 rounded-xl shadow-lg">
+            <h3 className="head-text text-white">Let's talk</h3>
+            <p className="text-lg text-white mt-3">
+              Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
+              life, I’m here to help.
+            </p>
+            <ContactForm
+              form={form}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              loading={loading}
+            />
+          </div>
         </div>
-      </div>
+
     </section>
   )
 }
