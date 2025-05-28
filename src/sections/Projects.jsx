@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from 'react'
+import { Suspense, useEffect, useRef, useState } from 'react'
 import { myProjects } from '../constants'
 import { Canvas } from '@react-three/fiber'
 import { Center, OrbitControls } from '@react-three/drei'
@@ -12,6 +12,14 @@ export const Projects = () => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0)
     const currentProject = myProjects[selectedProjectIndex]
     const projectCount = myProjects.length
+
+    useEffect(() => {
+        const controls = orbitRef.current
+        if (!controls) return
+
+        const canvas = controls.domElement
+        canvas.style.touchAction = isMobile ? 'auto' : 'none'
+    }, [isMobile])
 
     const handleNavigation = (direction) => {
         setSelectedProjectIndex((prevIndex) => {
@@ -85,7 +93,7 @@ export const Projects = () => {
                     </div>
                 </div>
                 <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
-                    <Canvas   style={{ touchAction: isMobile ? 'auto' : 'none' }}>
+                    <Canvas style={{ touchAction: isMobile ? 'auto' : 'none' }}>
                         <ambientLight intensity={Math.PI} />
                         <directionalLight position={[10, 10, 5]} />
                         <Center>
@@ -100,7 +108,7 @@ export const Projects = () => {
                          maxPolarAngle={Math.PI / 2}
                          enableZoom={false}
                          enableRotate={!isMobile}
-                         enablePan   = {!isMobile}
+                         enablePan = {!isMobile}
                          />
                     </Canvas>
                 </div>
