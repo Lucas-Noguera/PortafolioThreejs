@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef, useState } from 'react'
+import { Suspense, useRef, useState } from 'react'
 import { myProjects } from '../constants'
 import { Canvas } from '@react-three/fiber'
 import { Center, OrbitControls } from '@react-three/drei'
@@ -8,20 +8,11 @@ import { useMediaQuery } from 'react-responsive'
 
 export const Projects = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 })
-    const isSmall = useMediaQuery({ maxWidth: 440 })
 
     const orbitRef = useRef()
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0)
     const currentProject = myProjects[selectedProjectIndex]
     const projectCount = myProjects.length
-
-    useEffect(() => {
-        const controls = orbitRef.current
-        if (!controls) return
-
-        const canvas = controls.domElement
-        canvas.style.touchAction = isSmall ? isMobile ? 'auto' : 'none' : 'none'
-    }, [isMobile, isSmall])
 
     const handleNavigation = (direction) => {
         setSelectedProjectIndex((prevIndex) => {
@@ -95,7 +86,12 @@ export const Projects = () => {
                     </div>
                 </div>
                 <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
-                    <Canvas style={{ touchAction: isMobile ? 'auto' : 'none' }}>
+                                <Canvas
+                                    onCreated={({ gl }) => {
+                                    if (isMobile) {
+                                        gl.domElement.style.touchAction = 'auto'
+                                        gl.domElement.style.pointerEvents = 'none'
+                                    }}}>
                         <ambientLight intensity={Math.PI} />
                         <directionalLight position={[10, 10, 5]} />
                         <Center>
