@@ -8,6 +8,8 @@ import { useMediaQuery } from 'react-responsive'
 
 export const Projects = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 })
+    const isSmall = useMediaQuery({ maxWidth: 440 })
+
     const orbitRef = useRef()
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0)
     const currentProject = myProjects[selectedProjectIndex]
@@ -18,8 +20,8 @@ export const Projects = () => {
         if (!controls) return
 
         const canvas = controls.domElement
-        canvas.style.touchAction = isMobile ? 'auto' : 'none'
-    }, [isMobile])
+        canvas.style.touchAction = isSmall ? isMobile ? 'auto' : 'none' : 'none'
+    }, [isMobile, isSmall])
 
     const handleNavigation = (direction) => {
         setSelectedProjectIndex((prevIndex) => {
