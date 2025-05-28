@@ -27,6 +27,10 @@ export const About = () => {
      controls.enableRotate = !isMobile
      controls.enableZoom   = !isMobile
      controls.enablePointerInteraction = !isMobile
+
+      const renderer = globeRef.current.renderer()
+      const canvasEl = renderer.domElement
+      canvasEl.style.touchAction = isMobile ? 'auto' : 'none'
       }
     }
 
