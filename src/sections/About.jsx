@@ -1,6 +1,7 @@
 import Globe from 'react-globe.gl'
 import { Button } from '../../components/Button'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 export const About = () => {
 
@@ -14,6 +15,22 @@ export const About = () => {
             setCopied(false)
         }, 2000)
     }
+
+     const globeRef = useRef()
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+
+  useEffect(() => {
+    const updateControls = () => {
+      if (globeRef.current) {
+        globeRef.current.controls().enableRotate = !isMobile
+      }
+    }
+
+    updateControls()
+
+    window.addEventListener('resize', updateControls)
+    return () => window.removeEventListener('resize', updateControls)
+  }, [isMobile])
 
     return (
         <section className="c-space my-20" id='about'>
@@ -50,6 +67,7 @@ export const About = () => {
                         <div className="grid-container">
                             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
                                 <Globe
+                                ref={globeRef}
                                 height={326}
                                 width={326}
                                 backgroundColor='rgba(0,0,0,0)'

@@ -1,6 +1,7 @@
 import { About } from './sections/About'
 import { Certifications } from './sections/Certifications'
 import { Contact } from './sections/Contact'
+import { Experience } from './sections/Experience'
 import { Footer } from './sections/Footer'
 import { Hero } from './sections/Hero'
 import { Navbar } from './sections/Navbar'
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Projects />
       <Certifications />
+      <Experience />
       <Contact/>
       <Footer/>
     </main>
