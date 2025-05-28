@@ -22,8 +22,10 @@ export const About = () => {
   useEffect(() => {
     const updateControls = () => {
       if (globeRef.current) {
-        globeRef.current.controls().enableRotate = !isMobile
-        globeRef.current.controls().enablePointerInteraction = !isMobile
+     globeRef.current.controls().enableRotate = !isMobile
+     const controls = globeRef.current.controls()
+     controls.enableRotate = !isMobile
+     controls.enableZoom   = !isMobile
       }
     }
 
@@ -77,7 +79,6 @@ export const About = () => {
                                 showGraticules
                                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                                enablePointerInteraction={!isMobile}
                                 />
                             </div>
                             <div>
