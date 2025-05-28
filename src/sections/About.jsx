@@ -76,6 +76,7 @@ export const About = () => {
                                 showGraticules
                                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                                enablePointerInteraction={!isMobile}
                                 />
                             </div>
                             <div>
