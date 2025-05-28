@@ -23,6 +23,7 @@ export const About = () => {
     const updateControls = () => {
       if (globeRef.current) {
         globeRef.current.controls().enableRotate = !isMobile
+        globeRef.current.controls().enablePointerInteraction = !isMobile
       }
     }
 
