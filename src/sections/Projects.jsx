@@ -86,12 +86,11 @@ export const Projects = () => {
                     </div>
                 </div>
                 <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
-                                <Canvas
-                                    onCreated={({ gl }) => {
-                                    if (isMobile) {
-                                        gl.domElement.style.touchAction = 'auto'
-                                        gl.domElement.style.pointerEvents = 'none'
-                                    }}}>
+                    <Canvas
+                    style={{
+                    touchAction:  'auto',
+                    pointerEvents: isMobile ? 'none' : 'auto',
+                        }}>
                         <ambientLight intensity={Math.PI} />
                         <directionalLight position={[10, 10, 5]} />
                         <Center>
@@ -109,8 +108,8 @@ export const Projects = () => {
                          enablePan = {!isMobile}
                          />
                     </Canvas>
+                  </div>
                 </div>
-            </div>
         </section>
     )
 }
