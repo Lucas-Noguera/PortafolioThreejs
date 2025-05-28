@@ -26,6 +26,7 @@ export const About = () => {
      const controls = globeRef.current.controls()
      controls.enableRotate = !isMobile
      controls.enableZoom   = !isMobile
+     controls.enablePointerInteraction = !isMobile
       }
     }
 
