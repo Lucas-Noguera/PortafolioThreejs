@@ -54,7 +54,12 @@ export const Hero = () => {
 
       <div ref={ref} className="w-full h-full absolute inset-0 z-0">
         {inView && (
-          <Canvas className="w-full h-full" frameloop={ isSmall ? 'demand' : isTablet ? 'demand' : 'always' }>
+          <Canvas
+          className="w-full h-full"
+          frameloop={ isSmall ? 'demand' : isTablet ? 'demand' : 'always' }
+            pixelratio={isSmall ? 1 : 1.5}    // o incluso `Math.min(window.devicePixelRatio, 1.5)`
+            gl={{ antialias: false, powerPreference: 'high-performance' }}
+          >
             <Suspense fallback={<CanvasLoader />}>
               <PerspectiveCamera makeDefault position={[0, 0, 20]} />
 
