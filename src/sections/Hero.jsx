@@ -56,7 +56,7 @@ export const Hero = () => {
         {inView && (
           <Canvas
           className="w-full h-full"
-          frameloop={ isSmall ? 'demand' : isTablet ? 'demand' : 'always' }
+          frameloop='demand'
             pixelratio={isSmall ? 1 : 1.5}    // o incluso `Math.min(window.devicePixelRatio, 1.5)`
             gl={{ antialias: false, powerPreference: 'high-performance' }}
           >
