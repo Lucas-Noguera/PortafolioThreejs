@@ -4,16 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.arrow-btn img {
-  filter: none;
+/* Solo para Brave oscuro: invertir flechas negras */
+html[data-brave-dark='true'] .arrow-btn img {
+  filter: invert(1);
 }
 
-/* Solo en modo oscuro, invierte los iconos */
-@media (prefers-color-scheme: dark) {
-  html[data-brave-dark='true'] .arrow-btn img {
-    filter: invert(1);
-  }
-}
 
 body {
   background: #010103;
