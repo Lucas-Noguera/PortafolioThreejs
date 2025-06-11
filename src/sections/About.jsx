@@ -48,7 +48,7 @@ export const About = () => {
                     <div className="col-span-1 xl:row-span-3">
 
                             <div className="grid-container">
-                                <img src="/assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain"/>
+                                <img src="/assets/grid1.webp" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain"/>
                                 <div>
                                     <p className="grid-headtext">Hi, I'm Lucas</p>
                                     <p className="grid-subtext">With 2 years of experience, I have honed my skills in frontend and backend development, with a focus in Javascript, React, Node, Express, MongoDB, and more.
@@ -60,7 +60,7 @@ export const About = () => {
 
                     <div className="col-span-1 xl:row-span-3">
                         <div className="grid-container">
-                            <img src="/assets/grid2.png"
+                            <img src="/assets/grid2.webp"
                             alt="grid-2"
                             className="w-full sm:w-[276px] h-fit object-contain"/>
                             <div>
@@ -101,7 +101,7 @@ export const About = () => {
                     </div>
                     <div className='xl:col-span-2 xl:row-span-3'>
                         <div className='grid-container'>
-                            <img src="/assets/grid3.png" alt="grid-3" className='w-full sm:h-[266px] h-fit object-contain'/>
+                            <img src="/assets/grid3.webp" alt="grid-3" className='w-full sm:h-[266px] h-fit object-contain'/>
                             <div>
                                 <p className='grid-headtext'>My Passion for Coding </p>
                                 <p className='grid-subtext'>I love solving problems and building things throug code. Coding isn't just my profession - it's my passion.</p>
@@ -111,7 +111,7 @@ export const About = () => {
                     <div className='xl:col-span-1 xl:row-span-2'>
                         <div className='grid-container'>
                             <img
-                            src="assets/grid4.png"
+                            src="assets/grid4.webp"
                             alt="grid-4"
                             className='w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top'/>
                             <div className='space-y-2'>
