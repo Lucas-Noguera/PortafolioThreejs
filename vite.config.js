@@ -7,17 +7,18 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // Todo lo que venga de node_modules lo aisla
           if (id.includes('node_modules')) {
-            // Agrupa three, fiber y drei juntos en un chunk “three-vendor”
+            // Agrupa React y ReactDOM junto con three/fiber/drei
             if (
+              id.match(/node_modules\/react($|\/)/) ||
+              id.match(/node_modules\/react-dom($|\/)/) ||
               id.includes('three/') ||
               id.includes('@react-three/fiber') ||
               id.includes('@react-three/drei')
             ) {
               return 'three-vendor'
             }
-            // El resto de dependencias en “vendor”
+            // El resto de dependencias generales
             return 'vendor'
           }
         },
