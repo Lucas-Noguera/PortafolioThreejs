@@ -8,17 +8,23 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            // Agrupa React y ReactDOM junto con three/fiber/drei
+            // 1) React y ReactDOM en su propio chunk
             if (
               id.match(/node_modules\/react($|\/)/) ||
               id.match(/node_modules\/react-dom($|\/)/) ||
+              id.includes('node_modules/scheduler')
+            ) {
+              return 'react-vendor'
+            }
+            // 2) three + fiber + drei
+            if (
               id.includes('three/') ||
               id.includes('@react-three/fiber') ||
               id.includes('@react-three/drei')
             ) {
               return 'three-vendor'
             }
-            // El resto de dependencias generales
+            // 3) resto de libs
             return 'vendor'
           }
         },
