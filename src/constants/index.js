@@ -54,13 +54,13 @@ export const myProjects = [
       'Utilizing React Context API for state management and PropTypes for type checking, ShopEasy delivers a seamless shopping experience with responsive design and intuitive controls.',
     href: 'https://shoppingcart26.netlify.app/',
     texture: '/textures/project/project1.mp4',
-    logo: '/assets/project-logo1.png',
+    logo: '/assets/ShoppingCart.webp',
     logoStyle: {
       backgroundColor: '#2A1816',
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/assets/spotlight1.png',
+    spotlight: '/assets/spotlight1.webp',
     tags: [
       {
         id: 1,
@@ -70,34 +70,35 @@ export const myProjects = [
       {
         id: 2,
         name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        path: 'assets/tailwindcss.webp',
       },
       {
         id: 3,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        path: '/assets/typescript.webp',
       },
       {
         id: 4,
         name: 'Framer Motion',
-        path: '/assets/framer.png',
+        path: '/assets/framer.webp',
       },
     ],
   },
   {
-    title: 'Translatr - Google Translate Clone',
+    title: 'Translate - Google Translate Clone',
     desc: 'Translatr mimics the core features of Google Translate, leveraging the Google Translate API to provide instant translations between any supported languages.',
     subdesc:
       'Built with React and styled-components, Translatr includes language detection, text input swapping, and clipboard integration for a streamlined translation workflow.',
+
     href: 'https://googletranslate26.netlify.app/',
     texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.png',
+    logo: '/assets/Translate.svg',
     logoStyle: {
       backgroundColor: '#13202F',
       border: '0.2px solid #17293E',
       boxShadow: '0px 0px 60px 0px #2F6DB54D',
     },
-    spotlight: '/assets/spotlight2.png',
+    spotlight: '/assets/spotlight2.webp',
     tags: [
       {
         id: 1,
@@ -107,17 +108,17 @@ export const myProjects = [
       {
         id: 2,
         name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        path: 'assets/tailwindcss.webp',
       },
       {
         id: 3,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        path: '/assets/typescript.webp',
       },
       {
         id: 4,
         name: 'Framer Motion',
-        path: '/assets/framer.png',
+        path: '/assets/framer.webp',
       },
     ],
   },
@@ -128,7 +129,7 @@ export const myProjects = [
       'Developed with React Hooks and Axios for data fetching, CineFinder features debounced search input and lazy-loading images to enhance performance.',
     href: 'https://buscadordepeliculas26.netlify.app/',
     texture: '/textures/project/project3.mp4',
-    logo: '/assets/project-logo3.png',
+    logo: '/assets/movies.webp',
     logoStyle: {
       backgroundColor: '#60f5a1',
       background:
@@ -136,7 +137,7 @@ export const myProjects = [
       border: '0.2px solid rgba(208, 213, 221, 1)',
       boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
     },
-    spotlight: '/assets/spotlight3.png',
+    spotlight: '/assets/spotlight3.webp',
     tags: [
       {
         id: 1,
@@ -146,17 +147,17 @@ export const myProjects = [
       {
         id: 2,
         name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        path: 'assets/tailwindcss.webp',
       },
       {
         id: 3,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        path: '/assets/typescript.webp',
       },
       {
         id: 4,
         name: 'Framer Motion',
-        path: '/assets/framer.png',
+        path: '/assets/framer.webp',
       },
     ],
   },
@@ -167,13 +168,13 @@ export const myProjects = [
       'Implemented with React and React Paginate, UserHub showcases pagination controls, real-time search, and responsive styling using Tailwind CSS.',
     href: 'https://randomusers26.netlify.app/',
     texture: '/textures/project/project4.mp4',
-    logo: '/assets/project-logo4.png',
+    logo: '/assets/UserHub.webp',
     logoStyle: {
       backgroundColor: '#0E1F38',
       border: '0.2px solid #0E2D58',
       boxShadow: '0px 0px 60px 0px #2F67B64D',
     },
-    spotlight: '/assets/spotlight4.png',
+    spotlight: '/assets/spotlight4.webp',
     tags: [
       {
         id: 1,
@@ -183,34 +184,34 @@ export const myProjects = [
       {
         id: 2,
         name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        path: 'assets/tailwindcss.webp',
       },
       {
         id: 3,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        path: '/assets/typescript.webp',
       },
       {
         id: 4,
         name: 'Framer Motion',
-        path: '/assets/framer.png',
+        path: '/assets/framer.webp',
       },
     ],
   },
   {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
-    subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+    title: 'CRUDMaster - React & Redux Task Manager',
+    desc: 'CRUDMaster is a task management application built with React and Redux. It allows users to create, read, update, and delete tasks with a persistent state managed by Redux Toolkit.',
+    subdesc: 'Built with React, Redux Toolkit, Redux Thunk for async operations, React Router for navigation, and styled using Tailwind CSS, CRUDMaster delivers a seamless and responsive user experience.',
+
+    href: 'https://github.com/Lucas-Noguera/ProyectosReact/tree/main/projects/crud-react-redux',
     texture: '/textures/project/project5.mp4',
-    logo: '/assets/project-logo5.png',
+    logo: '/assets/crud.webp',
     logoStyle: {
       backgroundColor: '#1C1A43',
       border: '0.2px solid #252262',
       boxShadow: '0px 0px 60px 0px #635BFF4D',
     },
-    spotlight: '/assets/spotlight5.png',
+    spotlight: '/assets/spotlight5.webp',
     tags: [
       {
         id: 1,
@@ -220,20 +221,58 @@ export const myProjects = [
       {
         id: 2,
         name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        path: 'assets/tailwindcss.webp',
       },
       {
         id: 3,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        path: '/assets/typescript.webp',
       },
       {
         id: 4,
         name: 'Framer Motion',
-        path: '/assets/framer.png',
+        path: '/assets/framer.webp',
       },
     ],
   },
+  {
+  title: 'NodeHub - Node.js Projects Collection',
+  desc: 'NodeHub is a compilation that brings together all Node.js-based projects from the ProyectosNode repository by Lucas Noguera.',
+  subdesc: 'This collection includes various educational and functional projects, ranging from an authentication API using JWT and bcrypt, basic Node.js and module exercises, an HTTP server with Express and advanced routing, to a template-based application using EJS and database integration for complex routes.',
+
+    href: 'https://github.com/Lucas-Noguera/ProyectosNode',
+    texture: '/textures/project/project6.mp4',
+    logo: '/assets/nodeLogo.webp',
+    logoStyle: {
+      backgroundColor: '#001E3C',
+      border: '0.2px solid #002D5A',
+      boxShadow: '0px 0px 60px 0px #007AC14D',
+    },
+    spotlight: '/assets/spotlight3.webp',
+    tags: [
+      {
+        id: 1,
+        name: 'Node.js',
+        path: '/assets/node-icon.svg',
+      },
+      {
+        id: 2,
+        name: 'Express',
+        path: '/assets/express.svg',
+      },
+      {
+        id: 3,
+        name: 'EJS',
+        path: '/assets/ejs.svg',
+      },
+      {
+        id: 4,
+        name: 'MongoDB',
+        path: '/assets/mongodb.svg',
+      },
+    ],
+  },
+
 ]
 
 export const calculateSizes = (isSmall, isMobile, isTablet, isIpadVertical, isWideLow) => {

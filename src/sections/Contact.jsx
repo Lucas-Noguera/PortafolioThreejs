@@ -65,7 +65,7 @@ const handleSubmit = (e) => {
       {alert.show && <Alert {...alert} />}
 
         <div className="relative w-full min-h-screen px-4 py-12 flex justify-center"
-        style={{ backgroundImage: "url('/assets/terminal.png')",
+        style={{ backgroundImage: "url('/assets/terminal.webp')",
           backgroundSize: '100% 100%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

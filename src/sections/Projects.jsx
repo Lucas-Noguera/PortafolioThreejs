@@ -63,7 +63,7 @@ export const Projects = () => {
                         rel='noreferrer'
                         >
                             <p>Check Live Site</p>
-                            <img src="/assets/arrow-up.png" alt="arrow" className='w-3 h-3'/>
+                            <img src="/assets/arrow-up.webp" alt="arrow" className='w-3 h-3'/>
                         </a>
                     </div>
                     <div className='flex justify-between items-center mt-7'>
@@ -71,7 +71,7 @@ export const Projects = () => {
                          className='arrow-btn'
                          onClick={() => handleNavigation('previous')}>
                             <img
-                            src="/assets/left-arrow.png"
+                            src="/assets/left-arrow.webp"
                             alt="left arrow"
                             className='w-4 h-4'/>
                         </button>
@@ -79,7 +79,7 @@ export const Projects = () => {
                          className='arrow-btn'
                          onClick={() => handleNavigation('next')}>
                             <img
-                            src="/assets/right-arrow.png"
+                            src="/assets/right-arrow.webp"
                             alt="right arrow"
                             className='w-4 h-4'/>
                         </button>

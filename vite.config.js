@@ -8,7 +8,6 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // opcionalmente puedes agrupar manualmente:
         manualChunks: {
           drei: ['@react-three/drei', '@react-three/fiber', 'three'],
         },

@@ -15,7 +15,7 @@ export const Certifications = () => {
             className="bg-white/10 hover:bg-white/20 p-5 rounded-xl border border-white/20 transition-colors duration-200 flex items-center gap-4"
           >
             <img
-              src="/assets/fcc-logo.png"
+              src="/assets/fcc-logo.webp"
               alt="FreeCodeCamp logo"
               className="w-12 h-12 object-contain rounded"
             />
