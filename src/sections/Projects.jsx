@@ -51,9 +51,11 @@ export const Projects = () => {
                         <div className='flex items-center gap-3'>
                             {currentProject.tags.map(
                                 (tag, index) => (
-                                    <div key={index} className='tech-logo'>
-                                        <img src={tag.path} alt={tag.name} />
-                                    </div>
+                                    <a href={tag.link} target="_blank" rel="noreferrer">
+                                        <div key={index} className='tech-logo'>
+                                            <img src={tag.path} alt={tag.name} />
+                                        </div>
+                                    </a>
                                 ))}
                         </div>
                         <a
