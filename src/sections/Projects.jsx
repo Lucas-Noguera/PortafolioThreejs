@@ -26,11 +26,13 @@ export const Projects = () => {
         : prev + 1,
     )
 
-  const variants = {
-    hidden: { opacity: 0, y: 20 },
-    enter:  { opacity: 1, y: 0 },
-    exit:   { opacity: 0, y: -20 },
-  }
+  const variants = isMobile
+    ? {}
+    : {
+        hidden: { opacity: 0, y: 20 },
+        enter: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -20 },
+      }
 
   return (
     <section className="c-space my-20">
@@ -52,9 +54,9 @@ export const Projects = () => {
               className={`relative flex flex-col z-10 text-white-600 ${isMobile ? 'h-full' : 'justify-between h-full'}`}
               variants={variants}
               initial={isMobile ? false : 'hidden'}
-              animate="enter"
-              exit="exit"
-              transition={{ duration: isMobile ? 0.2 : 0.4, ease: 'easeOut' }}
+              animate={isMobile ? false : 'enter'}
+              exit={isMobile ? false : 'exit'}
+              transition={{ duration: isMobile ? 0 : 0.4, ease: 'easeOut' }}
             >
               {/* Header: logo + title */}
               <div>
