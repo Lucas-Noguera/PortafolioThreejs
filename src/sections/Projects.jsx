@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import { myProjects } from '../constants'
 import { Canvas } from '@react-three/fiber'
 import { Center, OrbitControls } from '@react-three/drei'
@@ -37,7 +37,7 @@ export const Projects = () => {
       <p className="head-text">My Work</p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         {/* === CARD ESTÁTICO === */}
-        <div className="relative sm:p-10 py-10 px-5 shadow-2xl shadow-block-200 h-full">
+        <div className={`relative px-5 sm:p-10 shadow-2xl shadow-block-200 ${isMobile ? 'py-10 h-96 overflow-hidden' : 'py-10 h-full'}`}>
           <div className="absolute top-0 right-0 z-0">
             <img
               src={currentProject.spotlight}
@@ -46,19 +46,18 @@ export const Projects = () => {
             />
           </div>
 
-          {/* Animación completa del bloque */}
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedProjectIndex}
-              className="relative flex flex-col justify-between h-full z-10 text-white-600"
+              className={`relative flex flex-col z-10 text-white-600 ${isMobile ? 'h-full' : 'justify-between h-full'}`}
               variants={variants}
               initial="hidden"
               animate="enter"
               exit="exit"
               transition={{ duration: 0.4 }}
             >
-              {/* Contenido principal */}
-              <div className="space-y-5">
+              {/* Header: logo + title */}
+              <div>
                 <div
                   className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg"
                   style={currentProject.logoStyle}
@@ -69,11 +68,20 @@ export const Projects = () => {
                     className="w-10 h-10 shadow-sm"
                   />
                 </div>
-                <p className="text-white text-2xl font-semibold">
+                <p className="mt-4 text-white text-2xl font-semibold">
                   {currentProject.title}
                 </p>
-                <p>{currentProject.desc}</p>
-                <p>{currentProject.subdesc}</p>
+              </div>
+
+              {/* MIDDLE: descripción y tags, condicional */}
+              <div className={`mt-4 pr-2 space-y-4 ${isMobile ? 'flex-1 overflow-y-auto' : ''}`}>
+                <p className="text-white text-sm sm:text-base">
+                  {currentProject.desc}
+                </p>
+                <p className="text-white text-sm sm:text-base">
+                  {currentProject.subdesc}
+                </p>
+
                 <div className="flex items-center justify-between flex-wrap gap-5">
                   <div className="flex items-center gap-3 flex-wrap">
                     {currentProject.tags.map((tag, i) => (
@@ -105,8 +113,8 @@ export const Projects = () => {
                 </div>
               </div>
 
-              {/* Flechas siempre abajo con la misma posición */}
-              <div className="flex justify-between items-center mt-7">
+              {/* Footer: flechas */}
+              <div className="mt-4 flex justify-between items-center">
                 <button
                   className="arrow-btn"
                   onClick={() => handleNavigation('previous')}
