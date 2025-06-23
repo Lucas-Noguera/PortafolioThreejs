@@ -76,7 +76,7 @@ export const Projects = () => {
               </div>
 
               {/* MIDDLE: descripción y tags, condicional */}
-              <div className={`mt-4 pr-2 space-y-4 ${isMobile ? 'flex-1 overflow-y-auto' : ''}`}>
+              <div className={`mt-4 pr-2 space-y-4 ${isMobile ? 'mt-4 pr-2 space-y-4 flex-1 overflow-y-auto min-h-[130px] max-h-[500px]' : ''}`}>
                 <p className="text-white text-sm sm:text-base">
                   {currentProject.desc}
                 </p>
