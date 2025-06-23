@@ -51,10 +51,10 @@ export const Projects = () => {
               key={selectedProjectIndex}
               className={`relative flex flex-col z-10 text-white-600 ${isMobile ? 'h-full' : 'justify-between h-full'}`}
               variants={variants}
-              initial="hidden"
+              initial={isMobile ? false : 'hidden'}
               animate="enter"
               exit="exit"
-              transition={{ duration: 0.4 }}
+              transition={{ duration: isMobile ? 0.2 : 0.4, ease: 'easeOut' }}
             >
               {/* Header: logo + title */}
               <div>
