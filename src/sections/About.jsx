@@ -11,8 +11,9 @@ export const About = () => {
     if (!globeRef.current) return
     const controls = globeRef.current.controls()
     controls.enableRotate = !isMobile
-    controls.enableZoom = !isMobile
+    controls.enableZoom = false // Deshabilita zoom con rueda
     controls.enablePointerInteraction = !isMobile
+    if (controls.zoomSpeed !== undefined) controls.zoomSpeed = 0
     globeRef.current.renderer().domElement.style.touchAction = isMobile ? 'auto' : 'none'
   }, [isMobile])
 
@@ -30,13 +31,15 @@ export const About = () => {
     { name: 'Node.js', path: '/assets/node-icon.svg' },
     { name: 'Express', path: '/assets/express.svg' },
     { name: 'MongoDB', path: '/assets/mongodb.svg' },
-    { name: 'Node.js', path: '/assets/node-icon.svg' },
     { name: 'Tailwind CSS', path: '/assets/tailwindcss.webp' },
+    {name: 'Vite.js', path: '/assets/Vite.js.svg'},
   ]
+
+  // Ajuste de tamaño del globo
+  const globeSize = isMobile ? 300 : 360
 
   return (
     <section id="about" className="py-20 px-6 lg:px-24 bg-black text-white">
-      {/* Título */}
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold">About Me</h1>
         <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
@@ -44,9 +47,7 @@ export const About = () => {
         </p>
       </div>
 
-      {/* Grid principal */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        {/* Intro + Email (columna 1) */}
         <div className="space-y-6">
           <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md">
             <h2 className="text-3xl font-semibold">
@@ -75,30 +76,28 @@ export const About = () => {
           </div>
         </div>
 
-        {/* Globe interactivo (columna 2) */}
-        <div className="flex justify-center lg:justify-start">
+        <div className="flex w-full justify-center">
           <div
-            className="rounded-full overflow-hidden shadow-xl"
-            style={{ width: isMobile ? 200 : 280, height: isMobile ? 200 : 280 }}
+            className="rounded-full overflow-hidden shadow-xl mx-auto"
+            style={{ width: globeSize, height: globeSize }}
           >
             <Globe
-               ref={globeRef}
-               height={326}
-               width={326}
-               backgroundColor='rgba(0,0,0,0)'
-               backgroundImageOpacity={0.5}
-               showAtmosphere
-               showGraticules
-               globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-               bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+              ref={globeRef}
+              width={globeSize}
+              height={globeSize}
+              backgroundColor='rgba(0,0,0,0)'
+              backgroundImageOpacity={0.5}
+              showAtmosphere
+              showGraticules
+              globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+              bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
             />
           </div>
         </div>
 
-        {/* Tech Stack (columna 3) */}
         <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md">
           <h3 className="text-2xl font-semibold text-indigo-400 mb-4">Tech Stack</h3>
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {techStack.map((tech) => (
               <div
                 key={tech.name}
@@ -112,12 +111,10 @@ export const About = () => {
         </div>
       </div>
 
-      {/* Footer Globe Text */}
       <div className="mt-6 text-center text-gray-500">
         Trabajo remotamente en la mayoría de zonas horarias.
       </div>
 
-      {/* Pasión por el código */}
       <div className="mt-12 bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md">
         <h3 className="text-2xl font-semibold text-indigo-400 mb-2">Mi pasión por el código</h3>
         <p className="text-gray-300 leading-relaxed text-sm">
