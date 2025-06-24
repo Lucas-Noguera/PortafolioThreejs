@@ -32,7 +32,7 @@ export const About = () => {
     { name: 'Express', path: '/assets/express.svg' },
     { name: 'MongoDB', path: '/assets/mongodb.svg' },
     { name: 'Tailwind CSS', path: '/assets/tailwindcss.webp' },
-    {name: 'Vite.js', path: '/assets/Vite.js.svg'},
+    { name: 'Vite.js', path: '/assets/Vite.js.svg' },
   ]
 
   // Ajuste de tamaño del globo
@@ -47,7 +47,7 @@ export const About = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 items-start">
         <div className="space-y-6">
           <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md">
             <h2 className="text-3xl font-semibold">
@@ -81,17 +81,34 @@ export const About = () => {
             className="rounded-full overflow-hidden shadow-xl mx-auto"
             style={{ width: globeSize, height: globeSize }}
           >
-            <Globe
-              ref={globeRef}
-              width={globeSize}
-              height={globeSize}
-              backgroundColor='rgba(0,0,0,0)'
-              backgroundImageOpacity={0.5}
-              showAtmosphere
-              showGraticules
-              globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-              bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-            />
+          <Globe
+            ref={globeRef}
+            width={globeSize}
+            height={globeSize}
+            backgroundColor='rgba(0,0,0,0)'
+            backgroundImageOpacity={0.5}
+            showAtmosphere
+            showGraticules
+            globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
+            bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+            labelDotRadius={0.6}
+
+            // Tus datos de etiqueta
+            labelsData={[{ lat: -25.2637, lng: -57.5759, text: "I'm Here!", color: 'black', size: 0.3 }]}
+
+            // Mappers obligatorios
+            labelLat={d => d.lat}
+            labelLng={d => d.lng}
+            labelText={d => d.text}
+            labelColor={d => d.color}
+
+            // Aquí escalas el tamaño real de la etiqueta:
+            labelSize={d => d.size * 10}          // multiplica por 10, o ajusta el factor que necesites
+            labelResolution={512}                 // aumenta la resolución de la textura de la etiqueta
+            labelAltitude={0.02}                  // separa un poco el texto de la superficie
+
+          />
+
           </div>
         </div>
 
