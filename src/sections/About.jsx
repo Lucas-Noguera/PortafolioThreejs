@@ -60,6 +60,9 @@ export const About = () => {
             </p>
           </div>
           <div className="bg-[#111] p-4 rounded-2xl border border-gray-800 shadow-md">
+            <h2 className="text-3xl font-semibold mb-5">
+              Contact <span className="text-indigo-400">Me</span>{' '}
+            </h2>
             <button
               onClick={handleCopy}
               className="w-full flex items-center justify-center gap-3 bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors"
@@ -93,19 +96,16 @@ export const About = () => {
             bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
             labelDotRadius={0.6}
 
-            // Tus datos de etiqueta
-            labelsData={[{ lat: -25.2637, lng: -57.5759, text: "I'm Here!", color: 'black', size: 0.3 }]}
+            labelsData={[{ lat: -25.2637, lng: -57.5759, text: "I'm Here!", color: '#fff', size: 0.4 }]}
 
-            // Mappers obligatorios
             labelLat={d => d.lat}
             labelLng={d => d.lng}
             labelText={d => d.text}
             labelColor={d => d.color}
 
-            // Aquí escalas el tamaño real de la etiqueta:
-            labelSize={d => d.size * 10}          // multiplica por 10, o ajusta el factor que necesites
-            labelResolution={512}                 // aumenta la resolución de la textura de la etiqueta
-            labelAltitude={0.02}                  // separa un poco el texto de la superficie
+            labelSize={d => d.size * 10}
+            labelResolution={512}
+            labelAltitude={0.02}
 
           />
 
