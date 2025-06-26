@@ -1,0 +1,437 @@
+{
+  "navLinks": [
+    {
+      "id": 1,
+      "name": "Inicio",
+      "href": "#home"
+    },
+    {
+      "id": 2,
+      "name": "Acerca de",
+      "href": "#about"
+    },
+    {
+      "id": 3,
+      "name": "Trabajo",
+      "href": "#work"
+    },
+    {
+      "id": 5,
+      "name": "Certificaciones",
+      "href": "#certifications"
+    },
+    {
+      "id": 6,
+      "name": "Experiencia",
+      "href": "#experience"
+    },
+    {
+      "id": 4,
+      "name": "Contacto",
+      "href": "#contact"
+    }
+  ],
+  "HeroTexts": [
+    {
+      "id": 1,
+      "text": " Soy Lucas",
+      "textspan": "Hola,"
+    },
+    {
+      "id": 2,
+      "text": "y Marcas",
+      "textspan": "Construyendo Productos "
+    },
+    {
+      "id": 3,
+      "text": "Trabajemos juntos"
+    }
+  ],
+  "AboutTexts": [
+    {
+      "id": 1,
+      "title": "Acerca de ",
+      "titleHighlight": "Mí"
+    },
+    {
+      "id": 2,
+      "heading": "Hola, soy ",
+      "headingHighlight": "Lucas Noguera",
+      "emoji": "👋"
+    },
+    {
+      "id": 3,
+      "body": "Ubicado en Asunción, Paraguay. Trabajo de forma remota en la mayoría de zonas horarias.\n           Me apasiona aprender cosas nuevas y asumir nuevos desafíos,\n           todo con el objetivo de construir aplicaciones verdaderamente útiles para las personas.\n           Me apasiona compartir mi conocimiento y experiencias con otros."
+    },
+    {
+      "id": 4,
+      "contactTitle": "Contáctame ",
+      "contactHighlight": "",
+      "email": "lucasnoguera260105@gmail.com",
+      "copiedText": "¡Email copiado!"
+    },
+    {
+      "id": 5,
+      "downloadCV": "Descargar CV"
+    },
+    {
+      "id": 6,
+      "techTitle": "Stack ",
+      "techHighlight": "Tecnológico"
+    },
+    {
+      "id": 7,
+      "labelText": "¡Estoy aquí!"
+    }
+  ],
+  "ProjectsTexts": [
+    {
+      "id": 1,
+      "title": "Mi ",
+      "titleHighlight": "Trabajo"
+    },
+    {
+      "id": 2,
+      "checkLiveSite": "Ver Sitio en Vivo"
+    },
+    {
+      "id": 3,
+      "navPrevAlt": "izquierda",
+      "navNextAlt": "derecha"
+    }
+  ],
+  "CertificationsTexts": [
+    {
+      "id": 1,
+      "title": "Mis ",
+      "titleHighlight": "Certificaciones"
+    },
+    {
+      "id": 2,
+      "viewText": "Ver certificación en FreeCodeCamp"
+    },
+    {
+      "id": 3,
+      "logoAlt": "Logo de FreeCodeCamp",
+      "linkIconAlt": "icono de enlace"
+    }
+  ],
+  "ExperienceTexts": [
+    {
+      "id": 1,
+      "title": "Mi Experiencia ",
+      "titleHighlight1": "Laboral"
+    },
+    {
+      "id": 2,
+      "durationSeparator": " -- "
+    },
+    {
+      "id": 3,
+      "logoAlt": "Logo de la empresa"
+    }
+  ],
+  "ContactTexts": [
+    {
+      "id": 1,
+      "title": "Hablemos"
+    },
+    {
+      "id": 2,
+      "description": "Ya sea que busques construir un nuevo sitio web, mejorar tu plataforma existente,\n                  o dar vida a un proyecto único, estoy aquí para ayudar."
+    },
+    {
+      "id": 3,
+      "successAlert": "Gracias por tu mensaje 😃",
+      "errorAlert": "No recibí tu mensaje 😢"
+    }
+  ],
+  "FooterTexts": [
+    {
+      "id": 1,
+      "terms": "Términos y Condiciones",
+      "privacy": "Política de Privacidad",
+      "separator": "|"
+    },
+    {
+      "id": 2,
+      "githubAlt": "github",
+      "linkedinAlt": "Linkedin",
+      "instagramAlt": "instagram"
+    },
+    {
+      "id": 3,
+      "copyright": "© 2025 Lucas Noguera. Todos los derechos reservados."
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "title": "Desarrollo Backend y APIs",
+      "link": "https://www.freecodecamp.org/certification/LucasNoguera/back-end-development-and-apis"
+    },
+    {
+      "id": 2,
+      "title": "Librerías de Desarrollo Frontend",
+      "link": "https://www.freecodecamp.org/certification/LucasNoguera/front-end-development-libraries"
+    },
+    {
+      "id": 3,
+      "title": "Diseño Web Responsivo",
+      "link": "https://www.freecodecamp.org/certification/LucasNoguera/responsive-web-design"
+    },
+    {
+      "id": 4,
+      "title": "Algoritmos de JavaScript y Estructuras de Datos",
+      "link": "https://www.freecodecamp.org/certification/LucasNoguera/javascript-algorithms-and-data-structures-v8"
+    }
+  ],
+  "myProjects": [
+    {
+      "title": "ShopEasy - Carrito de Compras en React",
+      "desc": "ShopEasy es una interfaz de comercio electrónico dinámica construida con React. Obtiene productos de una API externa, permitiendo a los usuarios agregar artículos a su carrito, ajustar cantidades y ver actualizaciones en tiempo real del precio total.",
+      "subdesc": "Utilizando la API de Contexto de React para el manejo de estado y PropTypes para verificación de tipos, ShopEasy ofrece una experiencia de compra fluida con diseño responsivo y controles intuitivos.",
+      "href": "https://shoppingcart26.netlify.app/",
+      "texture": "/textures/project/project1.mp4",
+      "logo": "/assets/ShoppingCart.webp",
+      "logoStyle": {
+        "backgroundColor": "#2A1816",
+        "border": "0.2px solid #36201D",
+        "boxShadow": "0px 0px 60px 0px #AA3C304D"
+      },
+      "spotlight": "/assets/spotlight1.webp",
+      "tags": [
+        {
+          "id": 1,
+          "name": "React.js",
+          "path": "/assets/react.svg",
+          "link": "https://react.dev/"
+        },
+        {
+          "id": 2,
+          "name": "Vite.js",
+          "path": "assets/Vite.js.svg",
+          "link": "https://vite.dev/"
+        }
+      ]
+    },
+    {
+      "title": "Translate - Clon de Google Translate",
+      "desc": "Translatr imita las características principales de Google Translate, aprovechando la API de Google Translate para proporcionar traducciones instantáneas entre cualquier idioma soportado.",
+      "subdesc": "Construido con React y styled-components, Translatr incluye detección de idiomas, intercambio de entrada de texto e integración del portapapeles para un flujo de traducción optimizado.",
+      "href": "https://googletranslate26.netlify.app/",
+      "texture": "/textures/project/project2.mp4",
+      "logo": "/assets/Translate.svg",
+      "logoStyle": {
+        "backgroundColor": "#13202F",
+        "border": "0.2px solid #17293E",
+        "boxShadow": "0px 0px 60px 0px #2F6DB54D"
+      },
+      "spotlight": "/assets/spotlight2.webp",
+      "tags": [
+        {
+          "id": 1,
+          "name": "React.js",
+          "path": "/assets/react.svg",
+          "link": "https://react.dev/"
+        },
+        {
+          "id": 2,
+          "name": "ReactBootstrap",
+          "path": "assets/React-Bootstrap.svg",
+          "link": "https://react-bootstrap.github.io/"
+        },
+        {
+          "id": 3,
+          "name": "Bootstrap",
+          "path": "/assets/Bootstrap.svg",
+          "link": "https://getbootstrap.com/"
+        }
+      ]
+    },
+    {
+      "title": "CineFinder - Aplicación de Búsqueda de Películas",
+      "desc": "CineFinder se conecta a la API de The Movie Database para permitir a los usuarios buscar películas por título, mostrando pósters, calificaciones y resúmenes en un diseño limpio basado en tarjetas.",
+      "subdesc": "Desarrollado con React Hooks y Axios para obtención de datos, CineFinder cuenta con entrada de búsqueda con retraso y carga perezosa de imágenes para mejorar el rendimiento.",
+      "href": "https://buscadordepeliculas26.netlify.app/",
+      "texture": "/textures/project/project3.mp4",
+      "logo": "/assets/movies.webp",
+      "logoStyle": {
+        "backgroundColor": "#60f5a1",
+        "background": "linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)",
+        "border": "0.2px solid rgba(208, 213, 221, 1)",
+        "boxShadow": "0px 0px 60px 0px rgba(35, 131, 96, 0.3)"
+      },
+      "spotlight": "/assets/spotlight3.webp",
+      "tags": [
+        {
+          "id": 1,
+          "name": "React.js",
+          "path": "/assets/react.svg",
+          "link": "https://react.dev/"
+        },
+        {
+          "id": 2,
+          "name": "Vite.js",
+          "path": "assets/Vite.js.svg",
+          "link": "https://vite.dev/"
+        },
+        {
+          "id": 3,
+          "name": "Eslint",
+          "path": "/assets/ESLint.svg",
+          "link": "https://eslint.org/"
+        }
+      ]
+    },
+    {
+      "title": "UserHub - Directorio de Usuarios Aleatorios",
+      "desc": "UserHub obtiene perfiles de usuarios aleatorios de una API externa, presentándolos en una cuadrícula con búsqueda y paginación, ideal para demostrar capacidades de listado y filtrado de usuarios.",
+      "subdesc": "Implementado con React y React Paginate, UserHub muestra controles de paginación, búsqueda en tiempo real y estilo responsivo usando Tailwind CSS.",
+      "href": "https://randomusers26.netlify.app/",
+      "texture": "/textures/project/project4.mp4",
+      "logo": "/assets/UserHub.webp",
+      "logoStyle": {
+        "backgroundColor": "#0E1F38",
+        "border": "0.2px solid #0E2D58",
+        "boxShadow": "0px 0px 60px 0px #2F67B64D"
+      },
+      "spotlight": "/assets/spotlight4.webp",
+      "tags": [
+        {
+          "id": 1,
+          "name": "React.js",
+          "path": "/assets/react.svg",
+          "link": "https://react.dev/"
+        },
+        {
+          "id": 2,
+          "name": "Tanstack Query",
+          "path": "assets/react-query-seeklogo.svg",
+          "link": "https://tanstack.com/query/v4"
+        },
+        {
+          "id": 3,
+          "name": "TypeScript",
+          "path": "/assets/typescript.webp",
+          "link": "https://www.typescriptlang.org/"
+        },
+        {
+          "id": 2,
+          "name": "Vite.js",
+          "path": "assets/Vite.js.svg",
+          "link": "https://vite.dev/"
+        }
+      ]
+    },
+    {
+      "title": "CRUDMaster - Gestor de Tareas React & Redux",
+      "desc": "CRUDMaster es una aplicación de gestión de tareas construida con React y Redux. Permite a los usuarios crear, leer, actualizar y eliminar tareas con un estado persistente gestionado por Redux Toolkit.",
+      "subdesc": "Construido con React, Redux Toolkit, Redux Thunk para operaciones asíncronas, React Router para navegación y estilizado usando Tailwind CSS, CRUDMaster ofrece una experiencia de usuario fluida y responsiva.",
+      "href": "https://github.com/Lucas-Noguera/ProyectosReact/tree/main/projects/crud-react-redux",
+      "texture": "/textures/project/project5.mp4",
+      "logo": "/assets/crud.webp",
+      "logoStyle": {
+        "backgroundColor": "#1C1A43",
+        "border": "0.2px solid #252262",
+        "boxShadow": "0px 0px 60px 0px #635BFF4D"
+      },
+      "spotlight": "/assets/spotlight5.webp",
+      "tags": [
+        {
+          "id": 1,
+          "name": "React.js",
+          "path": "/assets/react.svg",
+          "link": "https://react.dev/"
+        },
+        {
+          "id": 2,
+          "name": "TailwindCSS",
+          "path": "assets/tailwindcss.webp",
+          "link": "https://tailwindcss.com/"
+        },
+        {
+          "id": 3,
+          "name": "Redux Toolkit",
+          "path": "/assets/Redux.svg",
+          "link": "https://redux-toolkit.js.org/"
+        },
+        {
+          "id": 4,
+          "name": "Vite.js",
+          "path": "assets/Vite.js.svg",
+          "link": "https://vite.dev/"
+        }
+      ]
+    },
+    {
+      "title": "NodeHub - Colección de Proyectos Node.js",
+      "desc": "NodeHub es una compilación que reúne todos los proyectos basados en Node.js del repositorio ProyectosNode de Lucas Noguera.",
+      "subdesc": "Esta colección incluye varios proyectos educativos y funcionales, que van desde una API de autenticación usando JWT y bcrypt, ejercicios básicos de Node.js y módulos, un servidor HTTP con Express y enrutamiento avanzado, hasta una aplicación basada en plantillas usando EJS e integración de base de datos para rutas complejas.",
+      "href": "https://github.com/Lucas-Noguera/ProyectosNode",
+      "texture": "/textures/project/project6.mp4",
+      "logo": "/assets/nodeLogo.webp",
+      "logoStyle": {
+        "backgroundColor": "#001E3C",
+        "border": "0.2px solid #002D5A",
+        "boxShadow": "0px 0px 60px 0px #007AC14D"
+      },
+      "spotlight": "/assets/spotlight3.webp",
+      "tags": [
+        {
+          "id": 1,
+          "name": "Node.js",
+          "path": "/assets/node-icon.svg",
+          "link": "https://nodejs.org/en/"
+        },
+        {
+          "id": 2,
+          "name": "Express",
+          "path": "/assets/express.svg",
+          "link": "https://expressjs.com/"
+        },
+        {
+          "id": 3,
+          "name": "EJS",
+          "path": "/assets/ejs.svg",
+          "link": "https://ejs.co/"
+        },
+        {
+          "id": 4,
+          "name": "MongoDB",
+          "path": "/assets/mongodb.svg",
+          "link": "https://www.mongodb.com/"
+        }
+      ]
+    }
+  ],
+  "workExperiences": [
+    {
+      "id": 1,
+      "name": "Grupo Vierci",
+      "pos": "Pasante de Desarrollo de Software y Soporte al Cliente",
+      "duration": "2023 – 2025",
+      "title": "Como pasante en Grupo Vierci, roté entre desarrollo de software—enfocándome en lenguajes de programación y construcción de herramientas internas—y soporte al cliente práctico en comercio electrónico. Gestioné consultas presenciales y aseguré una experiencia de usuario positiva en ambos canales.",
+      "icon": "/assets/AJVierci-Logo.webp",
+      "animation": "salute"
+    },
+    {
+      "id": 2,
+      "name": "PY Comunicaciones",
+      "pos": "Pasante de Desarrollo ABAP y SQL",
+      "duration": "Feb 2023 – May 2023",
+      "title": "En PY Comunicaciones, trabajé en proyectos ABAP y SQL, contribuyendo a módulos SAP personalizados y consultas de base de datos. Colaboré con desarrolladores senior para optimizar procesos de negocio y simplificar flujos de trabajo de datos.",
+      "icon": "/assets/py_comunicaciones.png",
+      "animation": "clapping"
+    },
+    {
+      "id": 3,
+      "name": "La Química Farmacéutica SA (LQF Grupo Harrison)",
+      "pos": "Pasante de Desarrollo de Software",
+      "duration": "2021 – 2022",
+      "title": "Durante mi pasantía en LQF Grupo Harrison, apoyé al equipo de TI desarrollando aplicaciones a pequeña escala y automatizaciones. Obtuve experiencia de primera mano en requisitos de software farmacéutico y prácticas de desarrollo orientadas a la calidad.",
+      "icon": "/assets/LQF.webp",
+      "animation": "victory"
+    }
+  ]
+}

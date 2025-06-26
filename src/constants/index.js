@@ -452,6 +452,39 @@ export const myProjects = [
 
 ]
 
+export const workExperiences = [
+  {
+    id: 1,
+    name: 'Grupo Vierci',
+    pos: 'Software Development & Customer Support Intern',
+    duration: '2023 – 2025',
+    title:
+      'As an intern at Grupo Vierci, I rotated between software development—focusing on programming languages and building internal tools—and hands-on customer support in e-commerce. I managed in-person inquiries and ensured a positive user experience across both channels.',
+    icon: '/assets/AJVierci-Logo.webp',
+    animation: 'salute',
+  },
+  {
+    id: 2,
+    name: 'PY Comunicaciones',
+    pos: 'ABAP & SQL Development Intern',
+    duration: 'Feb 2023 – May 2023',
+    title:
+      'At PY Comunicaciones, I worked on ABAP and SQL projects, contributing to custom SAP modules and database queries. I collaborated with senior developers to optimize business processes and streamline data workflows.',
+    icon: '/assets/py_comunicaciones.png',
+    animation: 'clapping',
+  },
+  {
+    id: 3,
+    name: 'La Química Farmacéutica SA (LQF Grupo Harrison)',
+    pos: 'Software Development Intern',
+    duration: '2021 – 2022',
+    title:
+      'During my internship at LQF Grupo Harrison, I supported the IT team by developing small-scale applications and automations. I gained first-hand experience in pharmaceutical software requirements and quality-driven development practices.',
+    icon: '/assets/LQF.webp',
+    animation: 'victory',
+  },
+]
+
 export const calculateSizes = (isSmall, isMobile, isTablet, isIpadVertical, isWideLow) => {
   const isSpecialTablet = isIpadVertical
   const isNestLike = isWideLow
@@ -528,41 +561,8 @@ export const calculateSizes = (isSmall, isMobile, isTablet, isIpadVertical, isWi
       : isTablet
       ? [-7, -12, -10]
       : [-13, -13, -10],
+    }
   }
-}
-
-export const workExperiences = [
-  {
-    id: 1,
-    name: 'Grupo Vierci',
-    pos: 'Software Development & Customer Support Intern',
-    duration: '2023 – 2025',
-    title:
-      'As an intern at Grupo Vierci, I rotated between software development—focusing on programming languages and building internal tools—and hands-on customer support in e-commerce. I managed in-person inquiries and ensured a positive user experience across both channels.',
-    icon: '/assets/AJVierci-Logo.webp',
-    animation: 'salute',
-  },
-  {
-    id: 2,
-    name: 'PY Comunicaciones',
-    pos: 'ABAP & SQL Development Intern',
-    duration: 'Feb 2023 – May 2023',
-    title:
-      'At PY Comunicaciones, I worked on ABAP and SQL projects, contributing to custom SAP modules and database queries. I collaborated with senior developers to optimize business processes and streamline data workflows.',
-    icon: '/assets/py_comunicaciones.png',
-    animation: 'clapping',
-  },
-  {
-    id: 3,
-    name: 'La Química Farmacéutica SA (LQF Grupo Harrison)',
-    pos: 'Software Development Intern',
-    duration: '2021 – 2022',
-    title:
-      'During my internship at LQF Grupo Harrison, I supported the IT team by developing small-scale applications and automations. I gained first-hand experience in pharmaceutical software requirements and quality-driven development practices.',
-    icon: '/assets/LQF.webp',
-    animation: 'victory',
-  },
-]
 
 export const getLayoutConfig = ({
   isSmall,
