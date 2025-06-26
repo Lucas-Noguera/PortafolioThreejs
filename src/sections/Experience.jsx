@@ -10,7 +10,7 @@ export const Experience = () => {
   const [animationName, setAnimationName] = useState('idle')
 
   return (
-    <section className="c-space my-20" id="work">
+    <section className="c-space my-20" id="experience">
       <div className="w-full text-white-600">
         <p className="head-text">My Work <span className='text-indigo-400'>Experience</span></p>
 

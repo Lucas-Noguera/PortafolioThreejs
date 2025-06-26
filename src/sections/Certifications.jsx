@@ -2,7 +2,7 @@ import { certifications } from '../constants/index.js'
 
 export const Certifications = () => {
   return (
-    <section className="c-space my-20">
+    <section className="c-space my-20" id='certifications'>
       <h3 className="head-text">My <span className='text-indigo-400'>Certifications</span></h3>
 
       <div className="grid md:grid-cols gap-6 mt-10">

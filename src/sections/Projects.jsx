@@ -33,7 +33,7 @@ export const Projects = () => {
   }
 
   return (
-    <section className="c-space my-20">
+    <section className="c-space my-20" id='work'>
       <p className="head-text">My <span className='text-indigo-400'>Work</span></p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         {/* === CARD ESTÁTICO === */}

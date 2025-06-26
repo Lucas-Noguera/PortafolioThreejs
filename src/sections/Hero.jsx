@@ -43,7 +43,7 @@ export const Hero = () => {
   })
 
   return (
-    <section className="relative h-screen w-full flex flex-col overflow-hidden">
+    <section className="relative h-screen w-full flex flex-col overflow-hidden" id='home'>
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
           <span className='text-indigo-400'>Hi</span>, I am Lucas <span className="waving-hand">👋</span>

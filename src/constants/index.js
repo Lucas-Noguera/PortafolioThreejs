@@ -17,6 +17,16 @@ export const navLinks = [
     href: '#work',
   },
   {
+    id: 5,
+    name: 'Certifications',
+    href: '#certifications',
+  },
+  {
+    id: 6,
+    name: 'Experience',
+    href: '#experience',
+  },
+  {
     id: 4,
     name: 'Contact',
     href: '#contact',
