@@ -34,7 +34,7 @@ export const Projects = () => {
 
   return (
     <section className="c-space my-20">
-      <p className="head-text">My Work</p>
+      <p className="head-text">My <span className='text-indigo-400'>Work</span></p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         {/* === CARD ESTÁTICO === */}
         <div className={`relative px-5 sm:p-10 shadow-2xl shadow-block-200 py-10 ${isMobile ? 'h-auto' : 'h-full'}`}>
@@ -59,7 +59,7 @@ export const Projects = () => {
                     className="w-10 h-10 shadow-sm"
                   />
                 </div>
-                <p className="mt-4 text-white text-2xl font-semibold">
+                <p className="mt-4 text-white text-2xl">
                   {currentProject.title}
                 </p>
               </div>
@@ -154,10 +154,10 @@ export const Projects = () => {
                 </div>
 
                 <div className="mt-4 pr-2 space-y-4 flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
-                  <p className="text-white text-sm sm:text-base">
+                  <p className="text-white-100 text-sm sm:text-base">
                     {currentProject.desc}
                   </p>
-                  <p className="text-white text-sm sm:text-base">
+                  <p className="text-white-100 text-sm sm:text-base">
                     {currentProject.subdesc}
                   </p>
 

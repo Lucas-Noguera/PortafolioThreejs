@@ -21,11 +21,7 @@ export const About = () => {
     if (!globeRef.current) return
 
     setTimeout(() => {
-      globeRef.current.pointOfView({
-        lat: -25.2637,
-        lng: -57.5759,
-        altitude: 2,
-      }, 1000)
+      globeRef.current.pointOfView({ lat: -25.2637, lng: -57.5759, altitude: 2 }, 1000)
     }, 500)
   }, [])
 
@@ -35,20 +31,23 @@ export const About = () => {
     setTimeout(() => setCopied(false), 2000)
   }
 
-const techStack = [
-  { name: 'JavaScript', path: '/assets/JavaScript.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
-  { name: 'TypeScript', path: '/assets/typescript.webp', link: 'https://www.typescriptlang.org/' },
-  { name: 'React.js', path: '/assets/react.svg', link: 'https://reactjs.org/' },
-  { name: 'Next.js', path: '/assets/Next.js.svg', link: 'https://nextjs.org/' },
-  { name: 'Node.js', path: '/assets/node-icon.svg', link: 'https://nodejs.org/' },
-  { name: 'Express', path: '/assets/express.svg', link: 'https://expressjs.com/' },
-  { name: 'MongoDB', path: '/assets/mongodb.svg', link: 'https://www.mongodb.com/' },
-  { name: 'TailwindCSS', path: '/assets/tailwindcss.webp', link: 'https://tailwindcss.com/' },
-  { name: 'Vite.js', path: '/assets/Vite.js.svg', link: 'https://vitejs.dev/' },
-  { name: 'MySQL', path: '/assets/MySQL.svg', link: 'https://www.mysql.com/' },
-  { name: 'AndroidStudio', path: '/assets/Android-Studio.svg', link: 'https://developer.android.com/studio' },
-  { name: 'DBeaver', path: '/assets/DBeaver.svg', link: 'https://dbeaver.io/' },
-]
+  const techStack = [
+    { name: 'JavaScript', path: '/assets/JavaScript.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+    { name: 'TypeScript', path: '/assets/typescript.webp', link: 'https://www.typescriptlang.org/' },
+    { name: 'React.js', path: '/assets/react.svg', link: 'https://reactjs.org/' },
+    { name: 'Next.js', path: '/assets/Next.js.svg', link: 'https://nextjs.org/' },
+    { name: 'Node.js', path: '/assets/node-icon.svg', link: 'https://nodejs.org/' },
+    { name: 'Express', path: '/assets/express.svg', link: 'https://expressjs.com/' },
+    { name: 'MongoDB', path: '/assets/mongodb.svg', link: 'https://www.mongodb.com/' },
+    { name: 'TailwindCSS', path: '/assets/tailwindcss.webp', link: 'https://tailwindcss.com/' },
+    { name: 'Vite.js', path: '/assets/Vite.js.svg', link: 'https://vitejs.dev/' },
+    { name: 'MySQL', path: '/assets/MySQL.svg', link: 'https://www.mysql.com/' },
+    { name: 'AndroidStudio', path: '/assets/Android-Studio.svg', link: 'https://developer.android.com/studio' },
+    { name: 'DBeaver', path: '/assets/DBeaver.svg', link: 'https://dbeaver.io/' },
+    {name: 'Expo', path: '/assets/snack.svg', link: 'https://expo.dev/'},
+    {name: 'css' , path: '/assets/CSS3.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS'},
+    {name: 'HTML', path: '/assets/HTML5.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML'},
+  ]
 
   const globeSize = isMobile ? 300 : 360
 
@@ -58,16 +57,19 @@ const techStack = [
         <h1 className="text-5xl font-bold">About <span className="text-indigo-400">Me</span></h1>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 items-stretch">
+      {/* Ahora el grid usa columnas 1fr auto 1fr para centrar el globe */}
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto_1fr] gap-8 items-stretch">
         <div className="flex flex-col justify-between h-full space-y-6">
           <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md h-full">
             <h2 className="text-3xl font-semibold">
-              Hola, soy <span className="text-indigo-400">Lucas Noguera</span>{' '}
+              Hello, I'm <span className="text-indigo-400">Lucas Noguera</span>{' '}
               <span className="inline-block waving-hand">👋</span>
             </h2>
             <p className="mt-2 text-gray-300 leading-relaxed">
-              Con más de 2 años de experiencia desarrollando aplicaciones robustas con JavaScript, React,
-              Node.js, Express y MongoDB. Con residencia en Asuncion, Paraguay. Trabajo remotamente en la mayoría de zonas horarias.
+              Based in Asuncion, Paraguay. I work remotely across most time zones.
+              I'm passionate about learning new things and taking on new challenges,
+              all with the goal of building truly useful applications for people.
+              I'm passionate about sharing my knowledge and experiences with others
             </p>
           </div>
           <div className="bg-[#111] p-4 rounded-2xl border border-gray-800 shadow-md">
@@ -87,14 +89,19 @@ const techStack = [
                 {copied ? '¡Email copiado!' : 'lucasnoguera260105@gmail.com'}
               </span>
             </button>
-          </div>
+              {/* CV Download Button */}
+              <a
+                href="/assets/Curriculum - Lucas Noguera.pdf"
+                download
+                className="mt-4 block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg transition-colors"
+              >
+                Download CV
+              </a>
+            </div>
         </div>
 
         <div className="flex justify-center items-center">
-          <div
-            className="rounded-full overflow-hidden shadow-xl"
-            style={{ width: globeSize, height: globeSize }}
-          >
+          <div className="rounded-full overflow-hidden shadow-xl" style={{ width: globeSize, height: globeSize }}>
             <Globe
               ref={globeRef}
               width={globeSize}
@@ -123,14 +130,13 @@ const techStack = [
             <h3 className="text-2xl font-semibold text-indigo-400 mb-4">Tech <span className='text-white font-bold'>Stack</span></h3>
             <div className="grid grid-cols-3 gap-4">
               {techStack.map((tech) => (
-                <a href={tech.link} target="_blank" rel="noreferrer">
-                <div
-                  key={tech.name}
-                  className="flex flex-col items-center p-3 bg-gray-900 rounded-lg transform transition hover:scale-105"
-                >
-                  <img src={tech.path} alt={tech.name} className="w-8 h-8 mb-2" />
-                  <span className="text-gray-300 text-xs text-center">{tech.name}</span>
-                </div>
+                <a key={tech.name} href={tech.link} target="_blank" rel="noreferrer">
+                  <div
+                    className="flex flex-col items-center p-3 bg-gray-900 rounded-lg transform transition hover:scale-105"
+                  >
+                    <img src={tech.path} alt={tech.name} className="w-8 h-8 mb-2" />
+                    <span className="text-gray-300 text-xs text-center">{tech.name}</span>
+                  </div>
                 </a>
               ))}
             </div>
@@ -138,8 +144,7 @@ const techStack = [
         </div>
       </div>
 
-      <div className="mt-6 text-center text-gray-500">
-      </div>
+      <div className="mt-6 text-center text-gray-500"></div>
     </section>
   )
 }
