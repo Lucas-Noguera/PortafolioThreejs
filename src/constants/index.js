@@ -358,30 +358,33 @@ export const calculateSizes = (isSmall, isMobile, isTablet, isIpadVertical, isWi
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: 'Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.',
-    icon: '/assets/framer.svg',
-    animation: 'victory',
+    name: 'Grupo Vierci',
+    pos: 'Software Development & Customer Support Intern',
+    duration: '2023 – 2025',
+    title:
+      'As an intern at Grupo Vierci, I rotated between software development—focusing on programming languages and building internal tools—and hands-on customer support in e-commerce. I managed in-person inquiries and ensured a positive user experience across both channels.',
+    icon: '/assets/AJVierci-Logo.webp',
+    animation: 'salute',
   },
   {
     id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: 'Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.',
-    icon: '/assets/figma.svg',
+    name: 'PY Comunicaciones',
+    pos: 'ABAP & SQL Development Intern',
+    duration: 'Feb 2023 – May 2023',
+    title:
+      'At PY Comunicaciones, I worked on ABAP and SQL projects, contributing to custom SAP modules and database queries. I collaborated with senior developers to optimize business processes and streamline data workflows.',
+    icon: '/assets/py_comunicaciones.png',
     animation: 'clapping',
   },
   {
     id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: 'Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.',
-    icon: '/assets/notion.svg',
-    animation: 'salute',
+    name: 'La Química Farmacéutica SA (LQF Grupo Harrison)',
+    pos: 'Software Development Intern',
+    duration: '2021 – 2022',
+    title:
+      'During my internship at LQF Grupo Harrison, I supported the IT team by developing small-scale applications and automations. I gained first-hand experience in pharmaceutical software requirements and quality-driven development practices.',
+    icon: '/assets/LQF.webp',
+    animation: 'victory',
   },
 ]
 

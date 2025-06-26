@@ -8,7 +8,7 @@ export const ContactForm = memo(function ContactForm({
 }) {
   return (
          <form onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
-            <label className="space-y-3">
+            <label className="space-y-3 text-white-600">
               <span className="field-label">Full Name</span>
               <input
                 type="text"

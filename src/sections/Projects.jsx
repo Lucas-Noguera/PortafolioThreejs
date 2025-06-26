@@ -220,7 +220,7 @@ export const Projects = () => {
         </div>
 
         {/* === CANVAS 3D === */}
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+        <div className="border border-gray-800 bg-black-200 rounded-lg h-96 md:h-full">
           <Canvas
             style={{ touchAction: 'auto', pointerEvents: isMobile ? 'none' : 'auto' }}
           >

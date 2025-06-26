@@ -82,7 +82,7 @@ export const Hero = () => {
           <Button
             name="Let's work together"
             isBeam
-            containerClass="btn sm:w-fit w-full sm:min-w-96"
+            containerClass="btn rounded-2xl border border-gray-800 sm:w-fit w-full sm:min-w-96"
             btnping="btn-ping"
             btnpingdot="btn-ping_dot"
           />

@@ -3,7 +3,7 @@ import { certifications } from '../constants/index.js'
 export const Certifications = () => {
   return (
     <section className="c-space my-20">
-      <h3 className="head-text">My Certifications</h3>
+      <h3 className="head-text">My <span className='text-indigo-400'>Certifications</span></h3>
 
       <div className="grid md:grid-cols gap-6 mt-10">
         {certifications.map((cert) => (
@@ -12,7 +12,7 @@ export const Certifications = () => {
             href={cert.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/10 hover:bg-white/20 p-5 rounded-xl border border-white/20 transition-colors duration-200 flex items-center gap-4"
+            className="bg-white/10 hover:bg-white/20 p-5 rounded-xl border border-gray-800 transition-colors duration-200 flex items-center gap-4"
           >
             <img
               src="/assets/fcc-logo.webp"
