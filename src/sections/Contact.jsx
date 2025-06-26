@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react'
 import useAlert from '../hooks/useAlert.js'
 import { Alert } from '../../components/Alert.jsx'
 import { ContactForm } from '../../components/ContactForm.jsx'
+import { ContactTexts } from '../constants/index.js'
 
 export const Contact = () => {
   const { alert, showAlert, hideAlert } = useAlert()
@@ -36,7 +37,7 @@ const handleSubmit = (e) => {
       setLoading(false)
       showAlert({
         show: true,
-        text: 'Thank you for your message 😃',
+        text: ContactTexts[2].successAlert,
         type: 'success',
       })
 
@@ -54,7 +55,7 @@ const handleSubmit = (e) => {
       console.error(error)
       showAlert({
         show: true,
-        text: "I didn't receive your message 😢",
+        text: ContactTexts[2].errorAlert,
         type: 'danger',
       })
     })
@@ -73,10 +74,9 @@ const handleSubmit = (e) => {
         }}>
 
             <div className="contact-container">
-            <h3 className="head-text text-white mt-10">Let's talk</h3>
+            <h3 className="head-text text-white mt-10"> {ContactTexts[0].title}</h3>
             <p className="text-lg text-white mt-3">
-              Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
-              life, I’m here to help.
+              {ContactTexts[1].description}
             </p>
             <ContactForm
               form={form}

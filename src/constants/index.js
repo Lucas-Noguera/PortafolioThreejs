@@ -33,6 +33,172 @@ export const navLinks = [
   },
 ]
 
+export const HeroTexts = [
+  {
+    id: 1,
+    text: ' I am Lucas',
+    textspan: 'Hi,',
+  },
+  {
+    id: 2,
+    text: '& Brands',
+    textspan: 'Building Products ',
+  },
+  {
+    id: 3,
+    text: 'Let\'s work together',
+  },
+]
+
+export const AboutTexts = [
+  {
+    id: 1,
+    // Título principal: "About Me", con la parte destacada en color
+    title: 'About ',
+    titleHighlight: 'Me',
+  },
+  {
+    id: 2,
+    // Primer bloque de texto: saludo e intro
+    heading: "Hello, I'm ",
+    headingHighlight: 'Lucas Noguera',
+    emoji: '👋',
+  },
+  {
+    id: 3,
+    // Párrafo descriptivo
+    body: `Based in Asuncion, Paraguay. I work remotely across most time zones.
+           I'm passionate about learning new things and taking on new challenges,
+           all with the goal of building truly useful applications for people.
+           I'm passionate about sharing my knowledge and experiences with others.`,
+  },
+  {
+    id: 4,
+    // Sección de contacto
+    contactTitle: 'Contact ',
+    contactHighlight: 'Me',
+    email: 'lucasnoguera260105@gmail.com',
+    copiedText: '¡Email copiado!',
+  },
+  {
+    id: 5,
+    // Texto del botón de descarga de CV
+    downloadCV: 'Download CV',
+  },
+    {
+    id: 6,
+    // Título de la sección Tech Stack
+    techTitle: 'Tech ',
+    techHighlight: 'Stack',
+  },
+    {
+    id: 7,
+    // Label para el marcador en el globo: "I'm Here!"
+    labelText: "I'm Here!",
+  },
+]
+
+export const ProjectsTexts = [
+  {
+    id: 1,
+    // Título principal de la sección Projects: "My Work"
+    title: 'My ',
+    titleHighlight: 'Work',
+  },
+  {
+    id: 2,
+    // Texto del enlace de vista en vivo
+    checkLiveSite: 'Check Live Site',
+  },
+  {
+    id: 3,
+    // Alt texts para navegación
+    navPrevAlt: 'left',
+    navNextAlt: 'right',
+  },
+]
+
+export const CertificationsTexts = [
+  {
+    id: 1,
+    // Título principal de la sección Certifications: "My Certifications"
+    title: 'My ',
+    titleHighlight: 'Certifications',
+  },
+  {
+    id: 2,
+    // Texto bajo el título de la certificación
+    viewText: 'View certification on FreeCodeCamp',
+  },
+  {
+    id: 3,
+    // Alt texts para imágenes en la sección
+    logoAlt: 'FreeCodeCamp logo',
+    linkIconAlt: 'link icon',
+  },
+]
+
+export const ExperienceTexts = [
+  {
+    id: 1,
+    // Título principal de la sección Experience: "My Work Experience"
+    title: 'My Work ',
+    titleHighlight1: 'Experience',
+  },
+  {
+    id: 2,
+    // Separador entre posición y duración
+    durationSeparator: ' -- ',
+  },
+  {
+    id: 3,
+    // Alt text genérico para iconos de experiencia
+    logoAlt: 'Company logo',
+  },
+]
+
+export const ContactTexts = [
+  {
+    id: 1,
+    // Título principal de la sección Contact: "Let's talk"
+    title: "Let's talk",
+  },
+  {
+    id: 2,
+    // Texto descriptivo bajo el título
+    description: `Whether you’re looking to build a new website, improve your existing platform,
+                  or bring a unique project to life, I’m here to help.`,
+  },
+  {
+    id: 3,
+    // Texto de alerta de éxito y error
+    successAlert: 'Thank you for your message 😃',
+    errorAlert: "I didn't receive your message 😢",
+  },
+]
+
+export const FooterTexts = [
+  {
+    id: 1,
+    // Enlaces de política
+    terms: 'Terms & Conditions',
+    privacy: 'Privacy Policy',
+    separator: '|',
+  },
+  {
+    id: 2,
+    // Alt texts para iconos sociales
+    githubAlt: 'github',
+    linkedinAlt: 'Linkedin',
+    instagramAlt: 'instagram',
+  },
+  {
+    id: 3,
+    // Texto de copyright
+    copyright: '© 2025 Lucas Noguera. All rights reserved.',
+  },
+]
+
 export const certifications = [
   {
     id: 1,

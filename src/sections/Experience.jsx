@@ -4,7 +4,7 @@ import { OrbitControls } from '@react-three/drei'
 
 import Developer from '../../components/Developer.jsx'
 import CanvasLoader from '../../components/Loading.jsx'
-import { workExperiences } from '../constants/index.js'
+import { ExperienceTexts, workExperiences } from '../constants/index.js'
 
 export const Experience = () => {
   const [animationName, setAnimationName] = useState('idle')
@@ -12,7 +12,7 @@ export const Experience = () => {
   return (
     <section className="c-space my-20" id="experience">
       <div className="w-full text-white-600">
-        <p className="head-text">My Work <span className='text-indigo-400'>Experience</span></p>
+        <p className="head-text"> {ExperienceTexts[0].title} <span className='text-indigo-400'>{ExperienceTexts[0].titleHighlight1}</span></p>
 
         <div className="work-container">
           <div className="work-canvas">
@@ -39,7 +39,7 @@ export const Experience = () => {
                   className="work-content_container group">
                   <div className="flex flex-col h-full justify-start items-center py-2">
                     <div className="work-content_logo">
-                      <img className="w-full h-full" src={item.icon} alt="" />
+                      <img className="w-full h-full" src={item.icon} alt={ExperienceTexts[2].logoAlt} />
                     </div>
 
                     <div className="work-content_bar" />
@@ -48,7 +48,7 @@ export const Experience = () => {
                   <div className="sm:p-5 px-2.5 py-5">
                     <p className="font-bold text-white-800">{item.name}</p>
                     <p className="text-sm mb-5">
-                      {item.pos} -- <span>{item.duration}</span>
+                      {item.pos}{ExperienceTexts[1].durationSeparator}<span>{item.duration}</span>
                     </p>
                     <p className="group-hover:text-white transition-all ease-in-out duration-500">{item.title}</p>
                   </div>

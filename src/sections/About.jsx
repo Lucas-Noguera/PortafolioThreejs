@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Globe from 'react-globe.gl'
 import { useMediaQuery } from 'react-responsive'
+import { AboutTexts } from '../constants'
 
 export const About = () => {
   const [copied, setCopied] = useState(false)
@@ -54,7 +55,7 @@ export const About = () => {
   return (
     <section id="about" className="py-20 px-6 lg:px-24 bg-black text-white">
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold">About <span className="text-indigo-400">Me</span></h1>
+        <h1 className="text-5xl font-bold"> {AboutTexts[0].title} <span className="text-indigo-400">{AboutTexts[0].titleHighlight}</span></h1>
       </div>
 
       {/* Ahora el grid usa columnas 1fr auto 1fr para centrar el globe */}
@@ -62,19 +63,16 @@ export const About = () => {
         <div className="flex flex-col justify-between h-full space-y-6">
           <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md h-full">
             <h2 className="text-3xl font-semibold">
-              Hello, I'm <span className="text-indigo-400">Lucas Noguera</span>{' '}
-              <span className="inline-block waving-hand">👋</span>
+              {AboutTexts[1].heading}<span className="text-indigo-400">{AboutTexts[1].headingHighlight}</span>{' '}
+              <span className="inline-block waving-hand">{AboutTexts[1].emoji}</span>
             </h2>
             <p className="mt-2 text-gray-300 leading-relaxed">
-              Based in Asuncion, Paraguay. I work remotely across most time zones.
-              I'm passionate about learning new things and taking on new challenges,
-              all with the goal of building truly useful applications for people.
-              I'm passionate about sharing my knowledge and experiences with others
+              {AboutTexts[2].body}
             </p>
           </div>
           <div className="bg-[#111] p-4 rounded-2xl border border-gray-800 shadow-md">
             <h2 className="text-3xl font-semibold mb-2">
-              Contact <span className="text-indigo-400">Me</span>{' '}
+              {AboutTexts[3].contactTitle}<span className="text-indigo-400">{AboutTexts[3].contactHighlight}</span>{' '}
             </h2>
             <button
               onClick={handleCopy}
@@ -85,8 +83,8 @@ export const About = () => {
                 alt={copied ? 'Copiado' : 'Email'}
                 className="w-5 h-5"
               />
-              <span className="text-gray-200 text-sm">
-                {copied ? '¡Email copiado!' : 'lucasnoguera260105@gmail.com'}
+              <span>
+                {copied ? AboutTexts[3].copiedText : AboutTexts[3].email}
               </span>
             </button>
               {/* CV Download Button */}
@@ -95,7 +93,7 @@ export const About = () => {
                 download
                 className="mt-4 block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg transition-colors"
               >
-                Download CV
+                  {AboutTexts[4].downloadCV}
               </a>
             </div>
         </div>
@@ -113,7 +111,12 @@ export const About = () => {
               globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
               bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
               labelDotRadius={0.6}
-              labelsData={[{ lat: -25.2637, lng: -57.5759, text: "I'm Here!", color: '#fff', size: 0.4 }]}
+              labelsData={[{
+                lat: -25.2637,
+                lng: -57.5759,
+                text: AboutTexts.find(o => o.id === 7).labelText,
+                color: '#fff',
+                size: 0.4 }]}
               labelLat={d => d.lat}
               labelLng={d => d.lng}
               labelText={d => d.text}
@@ -127,7 +130,7 @@ export const About = () => {
 
         <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md h-full flex flex-col justify-between">
           <div>
-            <h3 className="text-2xl font-semibold text-indigo-400 mb-4">Tech <span className='text-white font-bold'>Stack</span></h3>
+            <h3 className="text-2xl font-semibold text-indigo-400 mb-4">{AboutTexts[5].techTitle} <span className='text-white font-bold'>{AboutTexts[5].techHighlight}</span></h3>
             <div className="grid grid-cols-3 gap-4">
               {techStack.map((tech) => (
                 <a key={tech.name} href={tech.link} target="_blank" rel="noreferrer">

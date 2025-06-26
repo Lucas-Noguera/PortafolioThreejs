@@ -1,9 +1,9 @@
-import { certifications } from '../constants/index.js'
+import { certifications, CertificationsTexts } from '../constants/index.js'
 
 export const Certifications = () => {
   return (
     <section className="c-space my-20" id='certifications'>
-      <h3 className="head-text">My <span className='text-indigo-400'>Certifications</span></h3>
+      <h3 className="head-text">{CertificationsTexts[0].title} <span className='text-indigo-400'>{CertificationsTexts[0].titleHighlight}</span></h3>
 
       <div className="grid md:grid-cols gap-6 mt-10">
         {certifications.map((cert) => (
@@ -16,7 +16,7 @@ export const Certifications = () => {
           >
             <img
               src="/assets/fcc-logo.webp"
-              alt="FreeCodeCamp logo"
+              alt={CertificationsTexts[2].logoAlt}
               className="w-12 h-12 object-contain rounded"
             />
             <div className="flex-1">
@@ -24,12 +24,12 @@ export const Certifications = () => {
                 {cert.title}
               </div>
               <p className="text-white-500 mt-1 text-sm">
-                View certification on FreeCodeCamp
+                {CertificationsTexts[1].viewText}
               </p>
             </div>
             <img
               src="/assets/external-link.svg"
-              alt="link icon"
+              alt={CertificationsTexts[2].linkIconAlt}
               className="w-10 h-10 opacity-60"
             />
           </a>

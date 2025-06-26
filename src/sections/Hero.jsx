@@ -5,7 +5,7 @@ import { HackerRoom } from '../../components/HackerRoom'
 import { Suspense } from 'react'
 import { CanvasLoader } from '../../components/CanvasLoader'
 import { useMediaQuery } from 'react-responsive'
-import { getLayoutConfig } from '../constants'
+import { getLayoutConfig, HeroTexts } from '../constants'
 import { HeroCamera } from '../../components/HeroCamera'
 import { Button } from '../../components/Button'
 
@@ -46,9 +46,9 @@ export const Hero = () => {
     <section className="relative h-screen w-full flex flex-col overflow-hidden" id='home'>
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
-          <span className='text-indigo-400'>Hi</span>, I am Lucas <span className="waving-hand">👋</span>
+          <span className='text-indigo-400'>{HeroTexts[0].textspan}</span> {HeroTexts[0].text} <span className="waving-hand">👋</span>
         </p>
-        <p className="hero_tag text-gray_gradient"><span className='text-indigo-400'>Building Products</span> & Brands</p>
+        <p className="hero_tag text-gray_gradient"><span className='text-indigo-400'>{HeroTexts[1].textspan}</span>{HeroTexts[1].text}</p>
       </div>
 
       <div ref={ref} className="w-full h-full absolute inset-0 z-0">
@@ -80,7 +80,7 @@ export const Hero = () => {
       <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
         <a href="#about" className="w-fit">
           <Button
-            name="Let's work together"
+            name={HeroTexts[2].text}
             isBeam
             containerClass="btn rounded-2xl border border-gray-800 sm:w-fit w-full sm:min-w-96"
             btnping="btn-ping"
