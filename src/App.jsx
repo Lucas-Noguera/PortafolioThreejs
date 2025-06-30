@@ -1,3 +1,4 @@
+import Translate from '../components/Translate'
 import { About } from './sections/About'
 import { Certifications } from './sections/Certifications'
 import { Contact } from './sections/Contact'
@@ -19,6 +20,7 @@ function App() {
       <Experience />
       <Contact/>
       <Footer/>
+      <Translate/>
     </main>
   )
 }

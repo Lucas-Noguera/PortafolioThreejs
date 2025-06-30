@@ -5,11 +5,16 @@ import { HackerRoom } from '../../components/HackerRoom'
 import { Suspense } from 'react'
 import { CanvasLoader } from '../../components/CanvasLoader'
 import { useMediaQuery } from 'react-responsive'
-import { getLayoutConfig, HeroTexts } from '../constants'
+import { getLayoutConfig } from '../constants'
 import { HeroCamera } from '../../components/HeroCamera'
 import { Button } from '../../components/Button'
+import { useTranslation } from 'react-i18next'
 
 export const Hero = () => {
+  const { t } = useTranslation()
+  // Obtenemos el array de textos completo
+  const texts = t('HeroTexts', { returnObjects: true })
+
   const isSmall = useMediaQuery({ maxWidth: 440 })
   const isMobile = useMediaQuery({ minWidth: 441, maxWidth: 767 })
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1279 })
@@ -38,38 +43,48 @@ export const Hero = () => {
     isDesktopLow: isDesktopWideShort,
   })
 
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  })
+  const { ref, inView } = useInView({ threshold: 0.1 })
 
   return (
-    <section className="relative h-screen w-full flex flex-col overflow-hidden" id='home'>
+    <section
+      id="home"
+      className="relative h-screen w-full flex flex-col overflow-hidden"
+    >
+      {/* Texto de bienvenida */}
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
-          <span className='text-indigo-400'>{HeroTexts[0].textspan}</span> {HeroTexts[0].text} <span className="waving-hand">👋</span>
+          <span className="text-indigo-400">{texts[0].textspan}</span>
+          {texts[0].text}
+          <span className="waving-hand">👋</span>
         </p>
-        <p className="hero_tag text-gray_gradient"><span className='text-indigo-400'>{HeroTexts[1].textspan}</span>{HeroTexts[1].text}</p>
+        <p className="hero_tag text-gray_gradient">
+          <span className="text-indigo-400">{texts[1].textspan}</span>
+          {texts[1].text}
+        </p>
       </div>
 
+      {/* Canvas 3D */}
       <div ref={ref} className="w-full h-full absolute inset-0 z-0">
         {inView && (
           <Canvas
-          className="w-full h-full"
-          frameloop={ isSmall ? 'demand' : isTablet ? 'demand' : 'always' }
+            className="w-full h-full"
+            frameloop={isSmall || isTablet ? 'demand' : 'always'}
             pixelratio={isSmall ? 1 : 1.5}
             gl={{ antialias: false, powerPreference: 'high-performance' }}
           >
             <Suspense fallback={<CanvasLoader />}>
               <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-
-              <HeroCamera isMobile={isMobile} isTablet={isTablet} isSmall={isSmall}>
+              <HeroCamera
+                isMobile={isMobile}
+                isTablet={isTablet}
+                isSmall={isSmall}
+              >
                 <HackerRoom
                   position={layout.deskPosition}
                   rotation={[0, -Math.PI, 0]}
                   scale={layout.deskScale}
                 />
               </HeroCamera>
-
               <ambientLight intensity={2} />
               <directionalLight position={[10, 10, 10]} intensity={0.5} />
             </Suspense>
@@ -77,10 +92,11 @@ export const Hero = () => {
         )}
       </div>
 
+      {/* Botón de llamada a la acción */}
       <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
         <a href="#about" className="w-fit">
           <Button
-            name={HeroTexts[2].text}
+            name={texts[2].text}
             isBeam
             containerClass="btn rounded-2xl border border-gray-800 sm:w-fit w-full sm:min-w-96"
             btnping="btn-ping"
