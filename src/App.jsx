@@ -7,8 +7,10 @@ import { Footer } from './sections/Footer'
 import { Hero } from './sections/Hero'
 import { Navbar } from './sections/Navbar'
 import { Projects } from './sections/Projects'
+import { useLanguage } from './hooks/useLanguage'
 
 function App() {
+  useLanguage()
 
   return (
     <main className="max-w-7xl mx-auto p-4">
@@ -18,9 +20,9 @@ function App() {
       <Projects />
       <Certifications />
       <Experience />
-      <Contact/>
-      <Footer/>
-      <Translate/>
+      <Contact />
+      <Footer />
+      <Translate />
     </main>
   )
 }

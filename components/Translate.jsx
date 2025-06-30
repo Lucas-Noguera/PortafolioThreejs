@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useLanguage } from '../src/hooks/useLanguage'
 
 const langs = [
   { code: 'en', label: 'English', flag: '🇺🇸' },
@@ -9,6 +10,7 @@ const langs = [
 
 export default function Translate() {
   const { i18n } = useTranslation()
+  const [language, setLanguage] = useLanguage()
   const [open, setOpen] = useState(false)
   const ref = useRef()
 
@@ -46,7 +48,7 @@ export default function Translate() {
             <li key={code}>
               <button
                 onClick={() => {
-                  i18n.changeLanguage(code)
+                  setLanguage(code)       // ← guardará en localStorage
                   setOpen(false)
                 }}
                 className="w-full text-left px-4 py-3 flex items-center
