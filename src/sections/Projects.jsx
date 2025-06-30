@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Center, OrbitControls } from '@react-three/drei'
 import { useMediaQuery } from 'react-responsive'
@@ -12,6 +12,24 @@ export const Projects = () => {
   const { t } = useTranslation()
   const texts = t('ProjectsTexts', { returnObjects: true })
   const projects = t('myProjects', { returnObjects: true })
+
+    useEffect(() => {
+    projects.forEach(proj => {
+      // preload logo
+      const imgLogo = new Image()
+      imgLogo.src = proj.logo
+
+      // preload spotlight
+      const imgSpot = new Image()
+      imgSpot.src = proj.spotlight
+
+      // preload each tag icon
+      proj.tags.forEach(tag => {
+        const imgTag = new Image()
+        imgTag.src = tag.path
+      })
+    })
+  }, [projects])
 
   const isMobile = useMediaQuery({ maxWidth: 767 })
   const orbitRef = useRef()

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Globe from 'react-globe.gl'
 import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'react-i18next'
+import { GlobeMap } from '../../components/GlobeMap'
 
 export const About = () => {
   const { t } = useTranslation()
@@ -21,23 +22,13 @@ export const About = () => {
     if (controls.zoomSpeed !== undefined) controls.zoomSpeed = 0
     globeRef.current.renderer().domElement.style.touchAction = isMobile ? 'auto' : 'none'
   }, [isMobile])
-
-  useEffect(() => {
-    if (!globeRef.current) return
-
-    setTimeout(() => {
-      globeRef.current.pointOfView(
-        { lat: -25.2637, lng: -57.5759, altitude: 2 },
-        1000,
-      )
-    }, 500)
-  }, [])
-
   const handleCopy = () => {
     navigator.clipboard.writeText('lucasnoguera260105@gmail.com')
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
+
+ const hereText = AboutTexts.find(o => o.id === 7).labelText
 
   const techStack = [
     { name: 'JavaScript', path: '/assets/JavaScript.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
@@ -89,14 +80,9 @@ export const About = () => {
               onClick={handleCopy}
               className="w-full flex items-center justify-center gap-3 bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors"
             >
-              <img
-                src={copied ? '/assets/tick.svg' : '/assets/copy.svg'}
-                alt={copied ? 'Copiado' : 'Email'}
-                className="w-5 h-5"
-              />
-              <span>
-                {copied ? AboutTexts[3].copiedText : AboutTexts[3].email}
-              </span>
+                <span className="text-white">
+                  {copied ? AboutTexts[3].copiedText : AboutTexts[3].email}
+                </span>
             </button>
             <a
               href="/assets/Curriculum - Lucas Noguera.pdf"
@@ -109,39 +95,7 @@ export const About = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <div
-            className="rounded-full overflow-hidden shadow-xl"
-            style={{ width: globeSize, height: globeSize }}
-          >
-            <Globe
-              ref={globeRef}
-              width={globeSize}
-              height={globeSize}
-              backgroundColor="rgba(0,0,0,0)"
-              backgroundImageOpacity={0.5}
-              showAtmosphere
-              showGraticules
-              globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
-              bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-              labelDotRadius={0.6}
-              labelsData={[
-                {
-                  lat: -25.2637,
-                  lng: -57.5759,
-                  text: AboutTexts.find(o => o.id === 7).labelText,
-                  color: '#fff',
-                  size: 0.4,
-                },
-              ]}
-              labelLat={d => d.lat}
-              labelLng={d => d.lng}
-              labelText={d => d.text}
-              labelColor={d => d.color}
-              labelSize={d => d.size * 10}
-              labelResolution={512}
-              labelAltitude={0.02}
-            />
-          </div>
+            <GlobeMap hereText={hereText} isMobile={isMobile} globeSize={globeSize} />
         </div>
 
         <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md h-full flex flex-col justify-between">
