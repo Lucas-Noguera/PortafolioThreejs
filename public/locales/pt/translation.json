@@ -442,18 +442,6 @@
       "title": "Durante meu estágio na LQF Grupo Harrison, apoiei a equipe de TI desenvolvendo aplicações em pequena escala e automações. Obtive experiência de primeira mão em requisitos de software farmacêutico e práticas de desenvolvimento orientadas à qualidade.",
       "icon": "/assets/LQF.webp",
       "animation": "victory"
-    },
-    {
-      "ContactForm": {
-        "fullNameLabel": "Nome completo",
-        "fullNamePlaceholder": "ex., João Silva",
-        "emailLabel": "Endereço de e-mail",
-        "emailPlaceholder": "ex., joaosilva@gmail.com",
-        "messageLabel": "Sua mensagem",
-        "messagePlaceholder": "Compartilhe suas ideias ou dúvidas...",
-        "buttonSend": "Enviar mensagem",
-        "buttonSending": "Enviando..."
-      }
     }
   ]
 }

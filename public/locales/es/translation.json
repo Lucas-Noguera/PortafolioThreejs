@@ -443,19 +443,6 @@
       "title": "Durante mi pasantía en LQF Grupo Harrison, apoyé al equipo de TI desarrollando aplicaciones a pequeña escala y automatizaciones. Obtuve experiencia de primera mano en requisitos de software farmacéutico y prácticas de desarrollo orientadas a la calidad.",
       "icon": "/assets/LQF.webp",
       "animation": "victory"
-    },
-    {
-      "ContactForm": {
-        "fullNameLabel": "Nombre completo",
-        "fullNamePlaceholder": "ej., Juan Pérez",
-        "emailLabel": "Correo electrónico",
-        "emailPlaceholder": "ej., juanperez@gmail.com",
-        "messageLabel": "Tu mensaje",
-        "messagePlaceholder": "Comparte tus ideas o consultas...",
-        "buttonSend": "Enviar mensaje",
-        "buttonSending": "Enviando..."
-                      }
     }
-
   ]
 }
