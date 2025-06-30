@@ -1,22 +1,26 @@
 import React, { Suspense, useRef, useState } from 'react'
-import { myProjects, ProjectsTexts } from '../constants'
 import { Canvas } from '@react-three/fiber'
 import { Center, OrbitControls } from '@react-three/drei'
-import { CanvasLoader } from '../../components/CanvasLoader'
-import { DemoComputer } from '../../components/DemoComputer'
 import { useMediaQuery } from 'react-responsive'
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { CanvasLoader } from '../../components/CanvasLoader'
+import { DemoComputer } from '../../components/DemoComputer'
 
 export const Projects = () => {
+  const { t } = useTranslation()
+  const texts = t('ProjectsTexts', { returnObjects: true })
+  const projects = t('myProjects', { returnObjects: true })
+
   const isMobile = useMediaQuery({ maxWidth: 767 })
   const orbitRef = useRef()
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0)
-  const currentProject = myProjects[selectedProjectIndex]
-  const projectCount = myProjects.length
+  const currentProject = projects[selectedProjectIndex]
+  const projectCount = projects.length
 
-  const handleNavigation = (dir) =>
-    setSelectedProjectIndex((prev) =>
+  const handleNavigation = dir =>
+    setSelectedProjectIndex(prev =>
       dir === 'previous'
         ? prev === 0
           ? projectCount - 1
@@ -33,8 +37,11 @@ export const Projects = () => {
   }
 
   return (
-    <section className="c-space my-20" id='work'>
-      <p className="head-text">{ProjectsTexts[0].title} <span className='text-indigo-400'>{ProjectsTexts[0].titleHighlight}</span></p>
+    <section className="c-space my-20" id="work">
+      <p className="head-text">
+        {texts[0].title}
+        <span className="text-indigo-400">{texts[0].titleHighlight}</span>
+      </p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         {/* === CARD ESTÁTICO === */}
         <div className={`relative px-5 sm:p-10 shadow-2xl shadow-block-200 py-10 ${isMobile ? 'h-auto' : 'h-full'}`}>
@@ -93,7 +100,7 @@ export const Projects = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <p>{ProjectsTexts[1].checkLiveSite}</p>
+                    <p>{texts[1].checkLiveSite}</p>
                     <img
                       src="/assets/arrow-up.webp"
                       alt="arrow"
@@ -110,7 +117,7 @@ export const Projects = () => {
                 >
                   <img
                     src="/assets/left-arrow.webp"
-                    alt={ProjectsTexts[2].navPrevAlt}
+                    alt={texts[2].navPrevAlt}
                     className="w-4 h-4"
                   />
                 </button>
@@ -120,7 +127,7 @@ export const Projects = () => {
                 >
                   <img
                     src="/assets/right-arrow.webp"
-                    alt={ProjectsTexts[2].navNextAlt}
+                    alt={texts[2].navNextAlt}
                     className="w-4 h-4"
                   />
                 </button>
@@ -182,7 +189,7 @@ export const Projects = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <p>Check Live Site</p>
+                      <p>{texts[1].checkLiveSite}</p>
                       <img
                         src="/assets/arrow-up.webp"
                         alt="arrow"
@@ -199,7 +206,7 @@ export const Projects = () => {
                   >
                     <img
                       src="/assets/left-arrow.webp"
-                      alt="left"
+                      alt={texts[2].navPrevAlt}
                       className="w-4 h-4"
                     />
                   </button>
@@ -209,7 +216,7 @@ export const Projects = () => {
                   >
                     <img
                       src="/assets/right-arrow.webp"
-                      alt="right"
+                      alt={texts[2].navNextAlt}
                       className="w-4 h-4"
                     />
                   </button>
@@ -217,6 +224,7 @@ export const Projects = () => {
               </motion.div>
             </AnimatePresence>
           )}
+
         </div>
 
         {/* === CANVAS 3D === */}

@@ -1,9 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Globe from 'react-globe.gl'
 import { useMediaQuery } from 'react-responsive'
-import { AboutTexts } from '../constants'
+import { useTranslation } from 'react-i18next'
 
 export const About = () => {
+  const { t } = useTranslation()
+  // Obtenemos el array completo de textos
+  const AboutTexts = t('AboutTexts', { returnObjects: true })
+
   const [copied, setCopied] = useState(false)
   const globeRef = useRef()
   const isMobile = useMediaQuery({ maxWidth: 767 })
@@ -22,7 +26,10 @@ export const About = () => {
     if (!globeRef.current) return
 
     setTimeout(() => {
-      globeRef.current.pointOfView({ lat: -25.2637, lng: -57.5759, altitude: 2 }, 1000)
+      globeRef.current.pointOfView(
+        { lat: -25.2637, lng: -57.5759, altitude: 2 },
+        1000,
+      )
     }, 500)
   }, [])
 
@@ -45,9 +52,9 @@ export const About = () => {
     { name: 'MySQL', path: '/assets/MySQL.svg', link: 'https://www.mysql.com/' },
     { name: 'AndroidStudio', path: '/assets/Android-Studio.svg', link: 'https://developer.android.com/studio' },
     { name: 'DBeaver', path: '/assets/DBeaver.svg', link: 'https://dbeaver.io/' },
-    {name: 'Expo', path: '/assets/snack.svg', link: 'https://expo.dev/'},
-    {name: 'css' , path: '/assets/CSS3.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS'},
-    {name: 'HTML', path: '/assets/HTML5.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML'},
+    { name: 'Expo', path: '/assets/snack.svg', link: 'https://expo.dev/' },
+    { name: 'css', path: '/assets/CSS3.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+    { name: 'HTML', path: '/assets/HTML5.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
   ]
 
   const globeSize = isMobile ? 300 : 360
@@ -55,15 +62,18 @@ export const About = () => {
   return (
     <section id="about" className="py-20 px-6 lg:px-24 bg-black text-white">
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold"> {AboutTexts[0].title} <span className="text-indigo-400">{AboutTexts[0].titleHighlight}</span></h1>
+        <h1 className="text-5xl font-bold">
+          {AboutTexts[0].title}{' '}
+          <span className="text-indigo-400">{AboutTexts[0].titleHighlight}</span>
+        </h1>
       </div>
 
-      {/* Ahora el grid usa columnas 1fr auto 1fr para centrar el globe */}
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto_1fr] gap-8 items-stretch">
         <div className="flex flex-col justify-between h-full space-y-6">
           <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md h-full">
             <h2 className="text-3xl font-semibold">
-              {AboutTexts[1].heading}<span className="text-indigo-400">{AboutTexts[1].headingHighlight}</span>{' '}
+              {AboutTexts[1].heading}
+              <span className="text-indigo-400">{AboutTexts[1].headingHighlight}</span>{' '}
               <span className="inline-block waving-hand">{AboutTexts[1].emoji}</span>
             </h2>
             <p className="mt-2 text-gray-300 leading-relaxed">
@@ -72,7 +82,8 @@ export const About = () => {
           </div>
           <div className="bg-[#111] p-4 rounded-2xl border border-gray-800 shadow-md">
             <h2 className="text-3xl font-semibold mb-2">
-              {AboutTexts[3].contactTitle}<span className="text-indigo-400">{AboutTexts[3].contactHighlight}</span>{' '}
+              {AboutTexts[3].contactTitle}
+              <span className="text-indigo-400">{AboutTexts[3].contactHighlight}</span>{' '}
             </h2>
             <button
               onClick={handleCopy}
@@ -87,36 +98,41 @@ export const About = () => {
                 {copied ? AboutTexts[3].copiedText : AboutTexts[3].email}
               </span>
             </button>
-              {/* CV Download Button */}
-              <a
-                href="/assets/Curriculum - Lucas Noguera.pdf"
-                download
-                className="mt-4 block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg transition-colors"
-              >
-                  {AboutTexts[4].downloadCV}
-              </a>
-            </div>
+            <a
+              href="/assets/Curriculum - Lucas Noguera.pdf"
+              download
+              className="mt-4 block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded-lg transition-colors"
+            >
+              {AboutTexts[4].downloadCV}
+            </a>
+          </div>
         </div>
 
         <div className="flex justify-center items-center">
-          <div className="rounded-full overflow-hidden shadow-xl" style={{ width: globeSize, height: globeSize }}>
+          <div
+            className="rounded-full overflow-hidden shadow-xl"
+            style={{ width: globeSize, height: globeSize }}
+          >
             <Globe
               ref={globeRef}
               width={globeSize}
               height={globeSize}
-              backgroundColor='rgba(0,0,0,0)'
+              backgroundColor="rgba(0,0,0,0)"
               backgroundImageOpacity={0.5}
               showAtmosphere
               showGraticules
               globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
               bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
               labelDotRadius={0.6}
-              labelsData={[{
-                lat: -25.2637,
-                lng: -57.5759,
-                text: AboutTexts.find(o => o.id === 7).labelText,
-                color: '#fff',
-                size: 0.4 }]}
+              labelsData={[
+                {
+                  lat: -25.2637,
+                  lng: -57.5759,
+                  text: AboutTexts.find(o => o.id === 7).labelText,
+                  color: '#fff',
+                  size: 0.4,
+                },
+              ]}
               labelLat={d => d.lat}
               labelLng={d => d.lng}
               labelText={d => d.text}
@@ -130,13 +146,14 @@ export const About = () => {
 
         <div className="bg-[#111] p-6 rounded-2xl border border-gray-800 shadow-md h-full flex flex-col justify-between">
           <div>
-            <h3 className="text-2xl font-semibold text-indigo-400 mb-4">{AboutTexts[5].techTitle} <span className='text-white font-bold'>{AboutTexts[5].techHighlight}</span></h3>
+            <h3 className="text-2xl font-semibold text-indigo-400 mb-4">
+              {AboutTexts[5].techTitle}{' '}
+              <span className="text-white font-bold">{AboutTexts[5].techHighlight}</span>
+            </h3>
             <div className="grid grid-cols-3 gap-4">
-              {techStack.map((tech) => (
+              {techStack.map(tech => (
                 <a key={tech.name} href={tech.link} target="_blank" rel="noreferrer">
-                  <div
-                    className="flex flex-col items-center p-3 bg-gray-900 rounded-lg transform transition hover:scale-105"
-                  >
+                  <div className="flex flex-col items-center p-3 bg-gray-900 rounded-lg transform transition hover:scale-105">
                     <img src={tech.path} alt={tech.name} className="w-8 h-8 mb-2" />
                     <span className="text-gray-300 text-xs text-center">{tech.name}</span>
                   </div>

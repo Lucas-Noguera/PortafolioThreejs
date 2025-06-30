@@ -1,4 +1,15 @@
 {
+        
+  "ContactForm": {
+    "fullNameLabel": "Full Name",
+    "fullNamePlaceholder": "ex., John Doe",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "ex., johndoe@gmail.com",
+    "messageLabel": "Your message",
+    "messagePlaceholder": "Share your thoughts or inquiries...",
+    "buttonSend": "Send Message",
+    "buttonSending": "Sending..."},
+    
   "navLinks": [
     {
       "id": 1,

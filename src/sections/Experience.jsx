@@ -1,18 +1,25 @@
-import { Suspense, useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import { useTranslation } from 'react-i18next'
 
 import Developer from '../../components/Developer.jsx'
 import CanvasLoader from '../../components/Loading.jsx'
-import { ExperienceTexts, workExperiences } from '../constants/index.js'
 
 export const Experience = () => {
+  const { t } = useTranslation()
+  const texts = t('ExperienceTexts', { returnObjects: true })
+  const experiences = t('workExperiences', { returnObjects: true })
+
   const [animationName, setAnimationName] = useState('idle')
 
   return (
     <section className="c-space my-20" id="experience">
       <div className="w-full text-white-600">
-        <p className="head-text"> {ExperienceTexts[0].title} <span className='text-indigo-400'>{ExperienceTexts[0].titleHighlight1}</span></p>
+        <p className="head-text">
+          {texts[0].title}{' '}
+          <span className='text-indigo-400'>{texts[0].titleHighlight1}</span>
+        </p>
 
         <div className="work-container">
           <div className="work-canvas">
@@ -30,16 +37,21 @@ export const Experience = () => {
 
           <div className="work-content">
             <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-              {workExperiences.map((item, index) => (
+              {experiences.map((item, index) => (
                 <div
                   key={index}
                   onClick={() => setAnimationName(item.animation.toLowerCase())}
                   onPointerOver={() => setAnimationName(item.animation.toLowerCase())}
                   onPointerOut={() => setAnimationName('idle')}
-                  className="work-content_container group">
+                  className="work-content_container group"
+                >
                   <div className="flex flex-col h-full justify-start items-center py-2">
                     <div className="work-content_logo">
-                      <img className="w-full h-full" src={item.icon} alt={ExperienceTexts[2].logoAlt} />
+                      <img
+                        className="w-full h-full"
+                        src={item.icon}
+                        alt={texts[2].logoAlt}
+                      />
                     </div>
 
                     <div className="work-content_bar" />
@@ -48,9 +60,12 @@ export const Experience = () => {
                   <div className="sm:p-5 px-2.5 py-5">
                     <p className="font-bold text-white-800">{item.name}</p>
                     <p className="text-sm mb-5">
-                      {item.pos}{ExperienceTexts[1].durationSeparator}<span>{item.duration}</span>
+                      {item.pos}{texts[1].durationSeparator}
+                      <span>{item.duration}</span>
                     </p>
-                    <p className="group-hover:text-white transition-all ease-in-out duration-500">{item.title}</p>
+                    <p className="group-hover:text-white transition-all ease-in-out duration-500">
+                      {item.title}
+                    </p>
                   </div>
                 </div>
               ))}
